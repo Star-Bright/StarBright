@@ -1,0 +1,447 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+-include ../makefile.init
+
+RM := rm -rf
+
+# All of the sources participating in the build are defined here
+-include sources.mk
+-include src/ThirdParty/zeromq/tweetnacl/src/subdir.mk
+-include src/ThirdParty/zeromq/tweetnacl/contrib/randombytes/subdir.mk
+-include src/ThirdParty/zeromq/tools/subdir.mk
+-include src/ThirdParty/zeromq/tests/subdir.mk
+-include src/ThirdParty/zeromq/src/subdir.mk
+-include src/ThirdParty/zeromq/perf/subdir.mk
+-include src/ThirdParty/zeromq/builds/zos/subdir.mk
+-include src/ThirdParty/zeromq/builds/msvc/subdir.mk
+-include src/ThirdParty/zeromq/build/CMakeFiles/CheckTypeSize/subdir.mk
+-include src/ThirdParty/zeromq/build/CMakeFiles/3.10.2/CompilerIdCXX/subdir.mk
+-include src/ThirdParty/zeromq/build/CMakeFiles/3.10.2/CompilerIdC/subdir.mk
+-include src/ThirdParty/zeromq/build/CMakeFiles/subdir.mk
+-include src/ThirdParty/zeromq/CMakeFiles/CheckTypeSize/subdir.mk
+-include src/ThirdParty/zeromq/CMakeFiles/3.10.2/CompilerIdCXX/subdir.mk
+-include src/ThirdParty/zeromq/CMakeFiles/3.10.2/CompilerIdC/subdir.mk
+-include src/ThirdParty/zeromq/CMakeFiles/subdir.mk
+-include src/ThirdParty/yaml-cpp/util/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/node/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/integration/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/test/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/src/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/gtest/xcode/Samples/FrameworkSample/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/gtest/test/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/gtest/src/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/gtest/samples/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/gtest/fused-src/gtest/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/gtest/codegear/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/gmock-1.7.0/fused-src/subdir.mk
+-include src/ThirdParty/yaml-cpp/test/subdir.mk
+-include src/ThirdParty/yaml-cpp/src/contrib/subdir.mk
+-include src/ThirdParty/yaml-cpp/src/subdir.mk
+-include src/ThirdParty/websocketpp/test/subdir.mk
+-include src/ThirdParty/websocketpp/src/internal/subdir.mk
+-include src/ThirdParty/websocketpp/src/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/tutorials/utility_client/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/utility/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/transport/iostream/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/transport/asio/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/transport/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/roles/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/random/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/processors/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/message_buffer/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/logger/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/http/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/extension/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/endpoint/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/test/connection/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/utility_client/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/testee_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/testee_client/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/telemetry_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/telemetry_client/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/subprotocol_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/sip_client/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/simple_broadcast_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/print_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/iostream_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/handler_switch/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/enriched_storage/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/echo_server_tls/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/echo_server_both/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/echo_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/dev/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/debug_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/debug_client/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/broadcast_server/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/examples/associative_storage/subdir.mk
+-include src/ThirdParty/websocketpp/lib/websocketpp/docs/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/thirdparty/gtest/xcode/Samples/FrameworkSample/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/thirdparty/gtest/test/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/thirdparty/gtest/src/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/thirdparty/gtest/samples/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/thirdparty/gtest/codegear/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/test/unittest/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/test/perftest/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/tutorial/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/simplewriter/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/simplereader/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/simpledom/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/serialize/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/prettyauto/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/pretty/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/messagereader/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/condense/subdir.mk
+-include src/ThirdParty/websocketpp/lib/rapidjson/example/capitalize/subdir.mk
+-include src/ThirdParty/websocketpp/examples/QT/SioChatDemo/subdir.mk
+-include src/ThirdParty/websocketpp/examples/Console/subdir.mk
+-include src/ThirdParty/seasocks/src/test/c/subdir.mk
+-include src/ThirdParty/seasocks/src/main/c/util/subdir.mk
+-include src/ThirdParty/seasocks/src/main/c/sha1/subdir.mk
+-include src/ThirdParty/seasocks/src/main/c/seasocks/subdir.mk
+-include src/ThirdParty/seasocks/src/main/c/md5/subdir.mk
+-include src/ThirdParty/seasocks/src/main/c/internal/subdir.mk
+-include src/ThirdParty/seasocks/src/main/c/subdir.mk
+-include src/ThirdParty/seasocks/src/app/c/subdir.mk
+-include src/ThirdParty/rapidjson/test/unittest/subdir.mk
+-include src/ThirdParty/rapidjson/test/perftest/subdir.mk
+-include src/ThirdParty/rapidjson/example/tutorial/subdir.mk
+-include src/ThirdParty/rapidjson/example/simplewriter/subdir.mk
+-include src/ThirdParty/rapidjson/example/simplereader/subdir.mk
+-include src/ThirdParty/rapidjson/example/simplepullreader/subdir.mk
+-include src/ThirdParty/rapidjson/example/simpledom/subdir.mk
+-include src/ThirdParty/rapidjson/example/serialize/subdir.mk
+-include src/ThirdParty/rapidjson/example/schemavalidator/subdir.mk
+-include src/ThirdParty/rapidjson/example/prettyauto/subdir.mk
+-include src/ThirdParty/rapidjson/example/pretty/subdir.mk
+-include src/ThirdParty/rapidjson/example/parsebyparts/subdir.mk
+-include src/ThirdParty/rapidjson/example/messagereader/subdir.mk
+-include src/ThirdParty/rapidjson/example/lookaheadparser/subdir.mk
+-include src/ThirdParty/rapidjson/example/jsonx/subdir.mk
+-include src/ThirdParty/rapidjson/example/filterkeydom/subdir.mk
+-include src/ThirdParty/rapidjson/example/filterkey/subdir.mk
+-include src/ThirdParty/rapidjson/example/condense/subdir.mk
+-include src/ThirdParty/rapidjson/example/capitalize/subdir.mk
+-include src/ThirdParty/poco/cmake/subdir.mk
+-include src/ThirdParty/poco/build/script/subdir.mk
+-include src/ThirdParty/poco/build/CMakeFiles/3.9.1/CompilerIdCXX/subdir.mk
+-include src/ThirdParty/poco/build/CMakeFiles/3.9.1/CompilerIdC/subdir.mk
+-include src/ThirdParty/poco/build/CMakeFiles/subdir.mk
+-include src/ThirdParty/poco/Zip/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Zip/src/subdir.mk
+-include src/ThirdParty/poco/Zip/samples/zip/src/subdir.mk
+-include src/ThirdParty/poco/Zip/samples/unzip/src/subdir.mk
+-include src/ThirdParty/poco/XML/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/XML/src/subdir.mk
+-include src/ThirdParty/poco/XML/samples/SAXParser/src/subdir.mk
+-include src/ThirdParty/poco/XML/samples/PrettyPrint/src/subdir.mk
+-include src/ThirdParty/poco/XML/samples/DOMWriter/src/subdir.mk
+-include src/ThirdParty/poco/XML/samples/DOMParser/src/subdir.mk
+-include src/ThirdParty/poco/Util/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Util/src/subdir.mk
+-include src/ThirdParty/poco/Util/samples/pkill/src/subdir.mk
+-include src/ThirdParty/poco/Util/samples/Units/src/subdir.mk
+-include src/ThirdParty/poco/Util/samples/SampleServer/src/subdir.mk
+-include src/ThirdParty/poco/Util/samples/SampleApp/src/subdir.mk
+-include src/ThirdParty/poco/Redis/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Redis/src/subdir.mk
+-include src/ThirdParty/poco/PageCompiler/src/subdir.mk
+-include src/ThirdParty/poco/PageCompiler/samples/HTTPTimeServer/src/subdir.mk
+-include src/ThirdParty/poco/PageCompiler/File2Page/src/subdir.mk
+-include src/ThirdParty/poco/NetSSL_OpenSSL/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/NetSSL_OpenSSL/src/subdir.mk
+-include src/ThirdParty/poco/NetSSL_OpenSSL/samples/download/src/subdir.mk
+-include src/ThirdParty/poco/NetSSL_OpenSSL/samples/TwitterClient/src/subdir.mk
+-include src/ThirdParty/poco/NetSSL_OpenSSL/samples/Mail/src/subdir.mk
+-include src/ThirdParty/poco/NetSSL_OpenSSL/samples/HTTPSTimeServer/src/subdir.mk
+-include src/ThirdParty/poco/Net/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Net/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/ifconfig/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/httpget/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/download/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/dict/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/WebSocketServer/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/TimeServer/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/SMTPLogger/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/Ping/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/Mail/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/HTTPTimeServer/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/HTTPLoadTest/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/HTTPFormServer/src/subdir.mk
+-include src/ThirdParty/poco/Net/samples/EchoServer/src/subdir.mk
+-include src/ThirdParty/poco/MongoDB/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/MongoDB/src/subdir.mk
+-include src/ThirdParty/poco/MongoDB/samples/SQLToMongo/src/subdir.mk
+-include src/ThirdParty/poco/JSON/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/JSON/src/subdir.mk
+-include src/ThirdParty/poco/JSON/samples/Benchmark/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/wcelibcex-1.0/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/uuidgen/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/md5/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/inflate/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/hmacmd5/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/grep/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/dir/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/deflate/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/base64encode/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/base64decode/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/URI/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/Timer/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/StringTokenizer/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/NotificationQueue/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/Logger/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/LogRotation/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/LineEndingConverter/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/DateTime/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/BinaryReaderWriter/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/Activity/src/subdir.mk
+-include src/ThirdParty/poco/Foundation/samples/ActiveMethod/src/subdir.mk
+-include src/ThirdParty/poco/Data/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Data/src/subdir.mk
+-include src/ThirdParty/poco/Data/samples/WebNotifier/src/subdir.mk
+-include src/ThirdParty/poco/Data/samples/TypeHandler/src/subdir.mk
+-include src/ThirdParty/poco/Data/samples/Tuple/src/subdir.mk
+-include src/ThirdParty/poco/Data/samples/RowFormatter/src/subdir.mk
+-include src/ThirdParty/poco/Data/samples/RecordSet/src/subdir.mk
+-include src/ThirdParty/poco/Data/samples/Binding/src/subdir.mk
+-include src/ThirdParty/poco/Data/SQLite/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Data/SQLite/src/subdir.mk
+-include src/ThirdParty/poco/Data/ODBC/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Data/ODBC/src/subdir.mk
+-include src/ThirdParty/poco/Data/MySQL/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Data/MySQL/src/subdir.mk
+-include src/ThirdParty/poco/Crypto/testsuite/src/subdir.mk
+-include src/ThirdParty/poco/Crypto/src/subdir.mk
+-include src/ThirdParty/poco/Crypto/samples/genrsakey/src/subdir.mk
+-include src/ThirdParty/poco/CppUnit/src/subdir.mk
+-include src/ThirdParty/poco/CppUnit/WinTestRunner/src/subdir.mk
+-include src/ThirdParty/openssl/test/subdir.mk
+-include src/ThirdParty/openssl/ssl/statem/subdir.mk
+-include src/ThirdParty/openssl/ssl/record/subdir.mk
+-include src/ThirdParty/openssl/ssl/subdir.mk
+-include src/ThirdParty/openssl/ms/subdir.mk
+-include src/ThirdParty/openssl/fuzz/subdir.mk
+-include src/ThirdParty/openssl/engines/afalg/subdir.mk
+-include src/ThirdParty/openssl/engines/subdir.mk
+-include src/ThirdParty/openssl/demos/smime/subdir.mk
+-include src/ThirdParty/openssl/demos/pkcs12/subdir.mk
+-include src/ThirdParty/openssl/demos/evp/subdir.mk
+-include src/ThirdParty/openssl/demos/cms/subdir.mk
+-include src/ThirdParty/openssl/demos/bio/subdir.mk
+-include src/ThirdParty/openssl/crypto/x509v3/subdir.mk
+-include src/ThirdParty/openssl/crypto/x509/subdir.mk
+-include src/ThirdParty/openssl/crypto/whrlpool/subdir.mk
+-include src/ThirdParty/openssl/crypto/ui/subdir.mk
+-include src/ThirdParty/openssl/crypto/txt_db/subdir.mk
+-include src/ThirdParty/openssl/crypto/ts/subdir.mk
+-include src/ThirdParty/openssl/crypto/stack/subdir.mk
+-include src/ThirdParty/openssl/crypto/srp/subdir.mk
+-include src/ThirdParty/openssl/crypto/sha/subdir.mk
+-include src/ThirdParty/openssl/crypto/seed/subdir.mk
+-include src/ThirdParty/openssl/crypto/rsa/subdir.mk
+-include src/ThirdParty/openssl/crypto/ripemd/subdir.mk
+-include src/ThirdParty/openssl/crypto/rc5/subdir.mk
+-include src/ThirdParty/openssl/crypto/rc4/subdir.mk
+-include src/ThirdParty/openssl/crypto/rc2/subdir.mk
+-include src/ThirdParty/openssl/crypto/rand/subdir.mk
+-include src/ThirdParty/openssl/crypto/poly1305/subdir.mk
+-include src/ThirdParty/openssl/crypto/pkcs7/subdir.mk
+-include src/ThirdParty/openssl/crypto/pkcs12/subdir.mk
+-include src/ThirdParty/openssl/crypto/pem/subdir.mk
+-include src/ThirdParty/openssl/crypto/ocsp/subdir.mk
+-include src/ThirdParty/openssl/crypto/objects/subdir.mk
+-include src/ThirdParty/openssl/crypto/modes/subdir.mk
+-include src/ThirdParty/openssl/crypto/mdc2/subdir.mk
+-include src/ThirdParty/openssl/crypto/md5/asm/subdir.mk
+-include src/ThirdParty/openssl/crypto/md5/subdir.mk
+-include src/ThirdParty/openssl/crypto/md4/subdir.mk
+-include src/ThirdParty/openssl/crypto/md2/subdir.mk
+-include src/ThirdParty/openssl/crypto/lhash/subdir.mk
+-include src/ThirdParty/openssl/crypto/kdf/subdir.mk
+-include src/ThirdParty/openssl/crypto/idea/subdir.mk
+-include src/ThirdParty/openssl/crypto/hmac/subdir.mk
+-include src/ThirdParty/openssl/crypto/evp/subdir.mk
+-include src/ThirdParty/openssl/crypto/err/subdir.mk
+-include src/ThirdParty/openssl/crypto/engine/subdir.mk
+-include src/ThirdParty/openssl/crypto/ec/subdir.mk
+-include src/ThirdParty/openssl/crypto/dso/subdir.mk
+-include src/ThirdParty/openssl/crypto/dsa/subdir.mk
+-include src/ThirdParty/openssl/crypto/dh/subdir.mk
+-include src/ThirdParty/openssl/crypto/des/subdir.mk
+-include src/ThirdParty/openssl/crypto/ct/subdir.mk
+-include src/ThirdParty/openssl/crypto/conf/subdir.mk
+-include src/ThirdParty/openssl/crypto/comp/subdir.mk
+-include src/ThirdParty/openssl/crypto/cms/subdir.mk
+-include src/ThirdParty/openssl/crypto/cmac/subdir.mk
+-include src/ThirdParty/openssl/crypto/chacha/subdir.mk
+-include src/ThirdParty/openssl/crypto/cast/subdir.mk
+-include src/ThirdParty/openssl/crypto/camellia/subdir.mk
+-include src/ThirdParty/openssl/crypto/buffer/subdir.mk
+-include src/ThirdParty/openssl/crypto/bn/asm/subdir.mk
+-include src/ThirdParty/openssl/crypto/bn/subdir.mk
+-include src/ThirdParty/openssl/crypto/blake2/subdir.mk
+-include src/ThirdParty/openssl/crypto/bio/subdir.mk
+-include src/ThirdParty/openssl/crypto/bf/subdir.mk
+-include src/ThirdParty/openssl/crypto/async/arch/subdir.mk
+-include src/ThirdParty/openssl/crypto/async/subdir.mk
+-include src/ThirdParty/openssl/crypto/asn1/subdir.mk
+-include src/ThirdParty/openssl/crypto/aes/asm/subdir.mk
+-include src/ThirdParty/openssl/crypto/aes/subdir.mk
+-include src/ThirdParty/openssl/crypto/subdir.mk
+-include src/ThirdParty/openssl/apps/subdir.mk
+-include src/ThirdParty/nanomsg/tools/subdir.mk
+-include src/ThirdParty/nanomsg/tests/subdir.mk
+-include src/ThirdParty/nanomsg/src/utils/subdir.mk
+-include src/ThirdParty/nanomsg/src/transports/ws/subdir.mk
+-include src/ThirdParty/nanomsg/src/transports/utils/subdir.mk
+-include src/ThirdParty/nanomsg/src/transports/tcp/subdir.mk
+-include src/ThirdParty/nanomsg/src/transports/ipc/subdir.mk
+-include src/ThirdParty/nanomsg/src/transports/inproc/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/utils/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/survey/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/reqrep/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/pubsub/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/pipeline/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/pair/subdir.mk
+-include src/ThirdParty/nanomsg/src/protocols/bus/subdir.mk
+-include src/ThirdParty/nanomsg/src/devices/subdir.mk
+-include src/ThirdParty/nanomsg/src/core/subdir.mk
+-include src/ThirdParty/nanomsg/src/aio/subdir.mk
+-include src/ThirdParty/nanomsg/perf/subdir.mk
+-include src/ThirdParty/nanomsg/demo/subdir.mk
+-include src/ThirdParty/libsodium/test/default/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/sodium/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/randombytes/sysrandom/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/randombytes/salsa20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/randombytes/nativeclient/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/randombytes/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_verify/sodium/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/xsalsa20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/xchacha20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa208/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa208/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa2012/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa2012/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa20/xmm6int/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa20/xmm6/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa20/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/salsa20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/chacha20/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/chacha20/dolbeau/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/chacha20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_stream/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_sign/ed25519/ref10/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_sign/ed25519/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_sign/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_shorthash/siphash24/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_shorthash/siphash24/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_shorthash/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_secretstream/xchacha20poly1305/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_secretbox/xsalsa20poly1305/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_secretbox/xchacha20poly1305/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_secretbox/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_scalarmult/curve25519/sandy2x/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_scalarmult/curve25519/ref10/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_scalarmult/curve25519/donna_c64/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_scalarmult/curve25519/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_scalarmult/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/sse/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/nosse/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_pwhash/scryptsalsa208sha256/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_pwhash/argon2/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_pwhash/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_onetimeauth/poly1305/sse2/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_onetimeauth/poly1305/donna/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_onetimeauth/poly1305/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_onetimeauth/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_kx/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_kdf/blake2b/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_kdf/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_hash/sha512/cp/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_hash/sha512/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_hash/sha256/cp/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_hash/sha256/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_hash/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_generichash/blake2b/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_generichash/blake2b/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_generichash/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_core/salsa/ref/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_core/hsalsa20/ref2/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_core/hsalsa20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_core/hchacha20/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_core/curve25519/ref10/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_box/curve25519xsalsa20poly1305/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_box/curve25519xchacha20poly1305/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_box/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_auth/hmacsha512256/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_auth/hmacsha512/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_auth/hmacsha256/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_auth/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_aead/xchacha20poly1305/sodium/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_aead/chacha20poly1305/sodium/subdir.mk
+-include src/ThirdParty/libsodium/src/libsodium/crypto_aead/aes256gcm/aesni/subdir.mk
+-include src/ThirdParty/cereal/vs2013/unittests/subdir.mk
+-include src/ThirdParty/cereal/unittests/subdir.mk
+-include src/ThirdParty/cereal/sandbox/sandbox_shared_lib/subdir.mk
+-include src/ThirdParty/cereal/sandbox/subdir.mk
+-include src/ThirdParty/cereal/build/CMakeFiles/3.6.2/CompilerIdCXX/subdir.mk
+-include src/ThirdParty/cereal/build/CMakeFiles/3.6.2/CompilerIdC/subdir.mk
+-include src/ThirdParty/cereal/build/CMakeFiles/subdir.mk
+-include src/ThirdParty/azmq/test/socket_ops/subdir.mk
+-include src/ThirdParty/azmq/test/socket/subdir.mk
+-include src/ThirdParty/azmq/test/signal/subdir.mk
+-include src/ThirdParty/azmq/test/message/subdir.mk
+-include src/ThirdParty/azmq/test/context_ops/subdir.mk
+-include src/ThirdParty/azmq/test/actor/subdir.mk
+-include src/ThirdParty/azmq/doc/examples/actor/subdir.mk
+-include src/Common/subdir.mk
+-include subdir.mk
+-include objects.mk
+
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(strip $(CC_DEPS)),)
+-include $(CC_DEPS)
+endif
+ifneq ($(strip $(C++_DEPS)),)
+-include $(C++_DEPS)
+endif
+ifneq ($(strip $(C_UPPER_DEPS)),)
+-include $(C_UPPER_DEPS)
+endif
+ifneq ($(strip $(CXX_DEPS)),)
+-include $(CXX_DEPS)
+endif
+ifneq ($(strip $(C_DEPS)),)
+-include $(C_DEPS)
+endif
+ifneq ($(strip $(CPP_DEPS)),)
+-include $(CPP_DEPS)
+endif
+endif
+
+-include ../makefile.defs
+
+# Add inputs and outputs from these tool invocations to the build variables 
+
+# All Target
+all: StarBrightQuants
+
+# Tool invocations
+StarBrightQuants: $(OBJS) $(USER_OBJS)
+	@echo 'Building target: $@'
+	@echo 'Invoking: Cross G++ Linker'
+	g++  -o "StarBrightQuants" $(OBJS) $(USER_OBJS) $(LIBS)
+	@echo 'Finished building target: $@'
+	@echo ' '
+
+# Other Targets
+clean:
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(EXECUTABLES)$(OBJS)$(C_UPPER_DEPS)$(CXX_DEPS)$(C_DEPS)$(CPP_DEPS) StarBrightQuants
+	-@echo ' '
+
+.PHONY: all clean dependents
+
+-include ../makefile.targets
