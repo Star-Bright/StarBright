@@ -20,5 +20,5 @@ namespace bpo = boost::program_options;
 namespace bfs = boost::filesystem;
 
 namespace StarBright {
-
+  CConfig* CConfig::pinstance = nullptr;
 }
