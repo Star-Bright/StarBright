@@ -1,5 +1,5 @@
-#ifndef __EliteQuant_Common_GetRealTime_H__
-#define __EliteQuant_Common_GetRealTime_H__
+#ifndef __StarBright_Common_GetRealTime_H__
+#define __StarBright_Common_GetRealTime_H__
 
 /*
 * Author:  David Robert Nadeau
@@ -9,7 +9,7 @@
 */
 #include <inttypes.h>
 
-namespace EliteQuant
+namespace StarBright
 {
 #if defined(_WIN32) || defined(_WIN64)
 #include <Windows.h>
@@ -40,5 +40,5 @@ namespace EliteQuant
 	*/
 	uint64_t getMicroTime();
 }
-#endif  // __EliteQuant_Common_GetRealTime_H__
+#endif  // __StarBright_Common_GetRealTime_H__
 

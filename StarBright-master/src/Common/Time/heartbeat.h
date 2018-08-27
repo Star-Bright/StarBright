@@ -1,9 +1,9 @@
-#ifndef _EliteQuant_Common_HeartBeat_H_
-#define _EliteQuant_Common_HeartBeat_H_
+#ifndef _StarBright_Common_HeartBeat_H_
+#define _StarBright_Common_HeartBeat_H_
 
 #include <time.h>
 
-namespace EliteQuant
+namespace StarBright
 {
 	class CHeartbeat {
 	protected:
@@ -13,4 +13,4 @@ namespace EliteQuant
 		bool heatbeat(int);
 	};
 }
-#endif
+#endif //_StarBright_Common_HeartBeat_H_

@@ -1,5 +1,5 @@
-#ifndef _EliteQuant_Common_TimeUtil_H
-#define _EliteQuant_Common_TimeUtil_H
+#ifndef _StarBright_Common_TimeUtil_H
+#define _StarBright_Common_TimeUtil_H
 
 #include <chrono> //for msleep
 #include <thread> //for msleep
@@ -16,12 +16,12 @@
 using std::string;
 using std::vector;
 using std::pair;
-using std::mutex;
+//using std::mutex;
 using std::set;
 using std::locale;
 using boost::posix_time::ptime;
 
-namespace EliteQuant {
+namespace StarBright {
 #ifdef __linux__
 #define LOCALTIME_S(x,y) localtime_r(y,x)
 #else
@@ -60,4 +60,4 @@ namespace EliteQuant {
 	int inttimediff(int firsttime, int latertime);				// in seconds
 }
 
-#endif   // _EliteQuant_Common_TimeUtil_H
+#endif   // _StarBright_Common_TimeUtil_H

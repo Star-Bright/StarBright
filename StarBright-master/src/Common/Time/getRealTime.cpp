@@ -1,8 +1,14 @@
+/*
+ * getReallTime.cpp
+ *
+ *  Created on: 27 Aug 2018
+ *      Author: User
+ */
 #include <Common/Time/getRealTime.h>
 
-namespace EliteQuant
-{
-	uint64_t getMicroTime()
+namespace StarBright{
+
+uint64_t getMicroTime()
 	{
 		uint64_t t = 0;
 
@@ -76,3 +82,6 @@ namespace EliteQuant
 #endif
 	}
 }
+
+
+

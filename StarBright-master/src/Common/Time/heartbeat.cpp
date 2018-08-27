@@ -1,7 +1,7 @@
 #include <Common/Time/heartbeat.h>
 #include <Common/Util/util.h>
 
-namespace EliteQuant
+namespace StarBright
 {
 	bool CHeartbeat::heatbeat(int interval) {
 		time_t tmp = time(0);

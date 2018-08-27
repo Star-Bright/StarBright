@@ -13,7 +13,7 @@ using namespace boost::posix_time;
 using namespace boost::local_time;
 using namespace std;
 
-namespace EliteQuant {
+namespace StarBright {
 
 	string ymd() {
 		char buf[128] = { 0 };
