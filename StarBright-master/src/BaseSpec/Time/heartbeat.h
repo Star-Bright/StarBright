@@ -1,16 +1,16 @@
-#ifndef _StarBright_Common_HeartBeat_H_
-#define _StarBright_Common_HeartBeat_H_
+#ifndef _StarBright_BaseSpec_HeartBeat_H_
+#define _StarBright_BaseSpec_HeartBeat_H_
 
 #include <time.h>
 
 namespace StarBright
 {
-	class CHeartbeat {
+	class Heartbeat {
 	protected:
-		time_t last_time;
+		time_t lastTime;
 	public:
 		// derived class overwrites heartbeat to tell if itself is still alive
 		bool heatbeat(int);
 	};
 }
-#endif //_StarBright_Common_HeartBeat_H_
+#endif //_StarBright_BaseSpec_HeartBeat_H_

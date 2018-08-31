@@ -1,5 +1,5 @@
-#ifndef _StarBright_Common_TimeUtil_H
-#define _StarBright_Common_TimeUtil_H
+#ifndef _StarBright_BaseSpec_TimeUtil_H
+#define _StarBright_BaseSpec_TimeUtil_H
 
 #include <chrono> //for msleep
 #include <thread> //for msleep
@@ -11,7 +11,7 @@
 #include <boost/date_time/local_time/local_time_types.hpp>
 #include <boost/date_time/local_time/local_time_io.hpp>
 
-#include <Common/config.h>
+#include <BaseSpec/config.h>
 
 using std::string;
 using std::vector;
@@ -60,4 +60,4 @@ namespace StarBright {
 	int inttimediff(int firsttime, int latertime);				// in seconds
 }
 
-#endif   // _StarBright_Common_TimeUtil_H
+#endif   // _StarBright_BaseSpec_TimeUtil_H

@@ -1,7 +1,6 @@
-#include <Common/Util/util.h>
-#include <Common/Time/timeutil.h>
-#include <Common/Logger/logger.h>
-#include <Common/Util/util.h>
+#include <BaseSpec/Util/util.h>
+#include <BaseSpec/Time/timeutil.h>
+#include <BaseSpec/Logger/logger.h>
 #include <boost/date_time.hpp>
 #include <boost/date_time/local_time/local_time.hpp>
 #include <boost/program_options.hpp>

@@ -5,20 +5,21 @@
  *      Author: User
  */
 
-#ifndef _STARBRIGHT_COMMON_LOGGER_LOGGER_H_
-#define _STARBRIGHT_COMMON_LOGGER_LOGGER_H_
+#ifndef _STARBRIGHT_BASESPEC_LOGGER_LOGGER_H_
+#define _STARBRIGHT_BASESPEC_LOGGER_LOGGER_H_
 
 #include <stdarg.h>
 #include <stdio.h>
 #include <time.h>
 #include <mutex>
-#include <Common/Time/timeutil.h>
+
+#include "../../BaseSpec/Time/timeutil.h"
 
 namespace StarBright {
 
 class Logger {
-		static Logger* pinstance_;
-		//static mutex instancelocl_;
+		static Logger* instance_;
+		//static mutex instancelock_;
 
 		FILE* logfile = nullptr;
 		Logger();
@@ -32,4 +33,4 @@ public:
 	};
 }
 
-#endif /* _STARBRIGHT_COMMON_LOGGER_LOGGER_H_ */
+#endif /* _STARBRIGHT_BASESPEC_LOGGER_LOGGER_H_ */

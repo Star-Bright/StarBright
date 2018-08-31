@@ -1,5 +1,5 @@
-#ifndef __StarBright_Common_GetRealTime_H__
-#define __StarBright_Common_GetRealTime_H__
+#ifndef __StarBright_BASESPEC_GetRealTime_H__
+#define __StarBright_BASESPEC_GetRealTime_H__
 
 /*
 * Author:  David Robert Nadeau
@@ -40,5 +40,5 @@ namespace StarBright
 	*/
 	uint64_t getMicroTime();
 }
-#endif  // __StarBright_Common_GetRealTime_H__
+#endif  // __StarBright_BASESPEC_GetRealTime_H__
 

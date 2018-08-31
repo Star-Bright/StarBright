@@ -22,7 +22,7 @@
 #include <sstream>
 #include <memory>
 #include <string>
-
+#include <regex>
 //BOOST: contains c++ libraries
 #include <boost/filesystem.hpp>
 
@@ -99,24 +99,24 @@ printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 		PAIR = 0, REQ, REP, PUB, SUB, PIPELINE
 	};
 
-	class CConfig {
-		static CConfig* pinstance_;
+	class Config {
+		static Config* instance_;
 		//static mutex instancelock_;
 
-		CConfig();
+		Config();
 		RUN_MODE _mode = RUN_MODE::TRADE_MODE;
 		BROKERS _broker = BROKERS::IB;
-		MSGQ _msgq = MSGQ::NANOMSG;
+		MSGQ msgQ = MSGQ::NANOMSG;
 
-		static CConfig& instance();
+		static Config& instance();
 		void readConfig();
 
 		string _config_dir;
 		string _data_dir;
 		string _log_dir;
-		string config_dir();
-		string data_dir();
-		string log_dir();
+		string configDir();
+		string dataDir();
+		string logDir();
 
 		/******************************************* Brokerage ***********************************************/
 		//move to brokerage
