@@ -111,11 +111,56 @@ struct Order{
 	}
 	return regex_replace(ss.str(), r, "$1");
 	}
-
 };
+	struct MarketOrder: Order
+	{
+		MarketOrder(): Order()
+		{
+			limitPrice = 0;
+			stopPrice = 0;
+			trailPrice = 0;
+		}
+	};
+
+	struct LimitOrder: Order
+	{
+		LimitOrder(double lp): Order()
+		{
+			limitPrice = lp;
+			stopPrice = 0;
+			trailPrice = 0;
+		}
+	};
+
+	struct StopOrder: Order
+	{
+		StopOrder(double sp): Order()
+	{
+		limitPrice = 0;
+		stopPrice = sp;
+		trailPrice = 0;
+	}
+	};
+
+	struct StopLimitOrder: Order
+	{
+		StopLimitOrder(double lp, double sp): Order()
+		{
+			limitPrice = lp;
+			stopPrice = sp;
+			trailPrice = 0;
+		}
+	};
+
+	struct TrailingStopOrder: Order
+	{
+		TrailingStopOrder(double tp): Order()
+		{
+			limitPrice = 0;
+			stopPrice = 0;
+			trailPrice = tp;
+		}
+	};
 }
-
-
-
 
 #endif /* _STARBRIGHT_BASESPEC_ORDER_ORDER_H_ */
