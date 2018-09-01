@@ -18,6 +18,7 @@
 #include <set>
 #include <map>
 #include <list>
+#include <cfloat>
 #include <fstream>
 #include <sstream>
 #include <memory>

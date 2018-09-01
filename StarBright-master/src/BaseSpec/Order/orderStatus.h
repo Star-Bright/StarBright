@@ -13,7 +13,7 @@ namespace StarBright {
 
 enum OrderStatus {
 
-	unknown = 0,
+	UNKNOWN = 0,
 	newBorn = 1,
 	pendingSubmit = 2,
 	submitted = 3,
@@ -30,13 +30,13 @@ enum OrderStatus {
 	};
 	enum OrderFlag {
 
-		openPosition_ = 0,
-		closePosition_ = 1,
-		forceClose_ = 2,
-		closeToday_ = 3,
-		closeYesterday_ = 4,
-		forceOff_ = 5,
-		localForceClose_ = 6
+		openPosition = 0,
+		closePosition = 1,
+		forceClose = 2,
+		closeToday = 3,
+		closeYesterday = 4,
+		forceOff = 5,
+		localForceClose = 6
 	};
 
 	 string OrderStatusString[] = {
