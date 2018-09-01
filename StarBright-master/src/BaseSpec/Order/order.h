@@ -39,6 +39,7 @@ struct Order{
 	, outsideRegularTradingHour(false)
 	, hidden(false)
 	, allOrNone(false)
+
 	{
 	}
 
