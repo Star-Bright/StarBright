@@ -41,18 +41,18 @@ struct position {
 			 CEREAL_NVP(realizedPnL)
 			 );
  	 	 };
- 	 	 string toJson(const std::regex& s){
+ 	 	 string toJson(const std::regex& r){
  	 		 std::stringstream ss;
  	 		 {
  	 			cereal::JSONOutputArchive oarchive(ss);
  	 			oarchive(cereal::make_nvp("portfolio", *this));
  	 		 }
- 	 		 	return regex_replace(ss.str(), s, "$1");
+ 	 		 	return regex_replace(ss.str(), r, "$1");
  	 	 }
 
  	 	double Adjust(Fill& fill);
 
- 	 			void updatepnl(double mktPrice);
+ 	 			void updatePnL(double mktPrice);
 
  	 			void report();
 	};
