@@ -22,6 +22,7 @@ using std::locale;
 using boost::posix_time::ptime;
 
 namespace StarBright {
+
 #ifdef __linux__
 #define LOCALTIME_S(x,y) localtime_r(y,x)
 #else

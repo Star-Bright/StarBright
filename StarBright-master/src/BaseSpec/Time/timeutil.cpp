@@ -5,7 +5,7 @@
 #include <boost/date_time/local_time/local_time.hpp>
 #include <boost/program_options.hpp>
 #include <boost/algorithm/string.hpp>
-
+#define _GLIBCXX_USE_NANOSLEEP 1
 #include <fstream>
 
 using namespace boost::posix_time;
