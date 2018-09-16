@@ -16,15 +16,15 @@ namespace StarBright {
 
 namespace PNL{
 // Gets the open PL on a per-share basis, ignoring the size of the position.
-		double openedPosition(double lastTrade, double avgPrice, bool side);
-		double openedPosition(double lastTrade, double avgPrice, int positionSize);
+		double OpenPosition(double lastTrade, double avgPrice, bool side);
+		double OpenPosition(double lastTrade, double avgPrice, int positionSize);
 		// Gets the open PL considering all the shares held in a position.
-		double unrealizedPnL(double lastTrade, double avgPrice, int positionSizeMultiplier);
+		double UnrealizedPnL(double lastTrade, double avgPrice, int positionSizeMultiplier);
 
 		// Gets the closed PL on a per-share basis, ignoring how many shares are held.
-		double closedPosition(position& existing, Fill& adjust);
+		double ClosePosition(Position& existing, Fill& adjust);
 		// Gets the closed PL on a position basis, the PL that is registered to the account for the entire shares transacted.
-		double realizedPnL(position& existing, Fill& adjust, int multiplier = 1);
+		double RealizedPnL(Position& existing, Fill& adjust, int multiplier = 1);
 
 	}
 
