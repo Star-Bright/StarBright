@@ -13,14 +13,14 @@
 #include <BaseSpec/Util/util.h>
 #include <yaml-cpp/yaml.h>
 
-namespace bpt = boost::property_tree;
-namespace bpo = boost::program_options;
-namespace fs = boost::filesystem;
+namespace BoostPropertyTree = boost::property_tree;
+namespace BoostProgramOption = boost::program_options;
+namespace BoostFileSystem = boost::filesystem;
 
 namespace StarBright {
 
 	Config* Config::instance_ = nullptr;
-	//mutex Config::instanceLock_;
+	//mutex Config::instanceLock_; //TODO fix mutex problem
 
 	Config::Config() {
 	readConfig();
@@ -92,17 +92,17 @@ namespace StarBright {
       }
 	}
 	string Config::configDir()
-	{	//return boost::filesystem::current_path().string();
+	{	return boost::filesystem::current_path().string();
 		return _config_dir;
 	}
 	string Config::dataDir()
-	{	//boost::filesystem::path full_path = boost::filesystem::current_path() / "log";
-		//return full_path.string();
+	{	boost::filesystem::path full_path = boost::filesystem::current_path() / "log";
+		return full_path.string();
 		return _data_dir;
 	}
 	string Config::logDir()
-	{	//boost::filesystem::path full_path = boost::filesystem::current_path() / "data";
-		//return full_path.string();
+	{	boost::filesystem::path full_path = boost::filesystem::current_path() / "data";
+		return full_path.string();
 		return _log_dir;
 	}
  }
