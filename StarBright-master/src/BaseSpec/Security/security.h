@@ -5,8 +5,8 @@
  *      Author: User
  */
 
-#ifndef _STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_
-#define _STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_
+#ifndef __STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_
+#define __STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_
 
 #include <string>
 #include <sstream>
@@ -96,4 +96,4 @@ namespace StarBright
 
 
 
-#endif /* _STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_ */
+#endif /* __STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_ */

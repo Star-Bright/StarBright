@@ -31,7 +31,7 @@ namespace StarBright {
 		~PortfolioManager();
 		static PortfolioManager *portfolioManagerInstance;
 		//static mutex instanceLock;
-		static PortfolioManager &Instance();
+		static PortfolioManager &instance();
 		//atomic<uint64_t> _count = { 0 };
 		uint64_t count = 0;
 		AccountInfo account;
@@ -40,12 +40,12 @@ namespace StarBright {
 		map<int, Position> positions;
 		double cash;
 
-		void Reset();
-		void Rebuild();
+		void reset();
+		void rebuild();
 
-		void OnSecurity(Security &security);
-		void Add(Position &position);
-		double AdjustPosition(Fill &fill);
+		void onSecurity(Security &security);
+		void add(Position &position);
+		double adjustPosition(Fill &fill);
 	};
 }
 

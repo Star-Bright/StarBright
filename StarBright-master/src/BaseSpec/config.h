@@ -4,8 +4,8 @@
  *  Created on: 25 Aug 2018
  *      Author: STARBRIGHT
  */
-#ifndef STARBRIGHT_COMMON_CONFIG_H_
-#define STARBRIGHT_COMMON_CONFIG_H_
+#ifndef __STARBRIGHT_BASESPEC_CONFIG_H_
+#define __STARBRIGHT_BASESPEC_CONFIG_H_
 
 #include <inttypes.h>
 #include <cmath>
@@ -28,12 +28,12 @@
 #include <boost/filesystem.hpp>
 
 //CEREAL: needed serialisation and de-serialisation
-#include <cereal/include/cereal/types/unordered_map.hpp>
-#include <cereal/include/cereal/types/memory.hpp>
-#include <cereal/include/cereal/archives/json.hpp>
-#include <cereal/include/cereal/types/vector.hpp>
-#include <cereal/include/cereal/types/string.hpp>
-#include <cereal/include/cereal/types/map.hpp>
+#include <cereal/types/unordered_map.hpp>
+#include <cereal/types/memory.hpp>
+#include <cereal/archives/json.hpp>
+#include <cereal/types/vector.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/map.hpp>
 
 // Define macros
 #if defined(_WIN32) || defined(_WIN64)
@@ -90,27 +90,29 @@ printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 	};
 
 	//nanomsg is a socket library that provides several common communication patterns.
-	enum class MSGQ : uint8_t
+	enum class MsgQueue : uint8_t
 	{
 		NANOMSG = 0, ZMQ, KAFKA, WEBSOCKET
 	};
 
-	enum class MSGQ_PROTOCOL : uint8_t
+	enum class MessageQueueProtocol : uint8_t
 	{
 		PAIR = 0, REQ, REP, PUB, SUB, PIPELINE
 	};
 
-	class Config {
-		static Config* instance_;
-		//static mutex instancelock_;
+	class Configuration {
+	public:
+		static Configuration *instance_;
+		//static mutex instanceLock_;
 
-		Config();
+		Configuration();
+
 		RUN_MODE _mode = RUN_MODE::TRADE_MODE;
 		BROKERS _broker = BROKERS::IB;
-		MSGQ msgQ = MSGQ::NANOMSG;
+		MsgQueue messageQueue = MsgQueue::NANOMSG;
 
-		static Config& instance();
-		void readConfig();
+		static Configuration &instance();
+		void readConfiguration();
 
 		string _config_dir;
 		string _data_dir;
@@ -165,4 +167,4 @@ printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 		/**************************************** End of Message Queue ******************************************/
 	};
 }
-#endif /* STARBRIGHT_COMMON_CONFIG_H_ */
+#endif /* __STARBRIGHT_BASESPEC_CONFIG_H_ */

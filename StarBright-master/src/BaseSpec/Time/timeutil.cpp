@@ -141,26 +141,26 @@ namespace StarBright {
 		return to_simple_string(pt);
 	}
 
-	int tointdate() {
+	int toIntDate() {
 		time_t current_time;
 		time(&current_time);
-		return tointdate(current_time);
+		return toIntDate(current_time);
 	}
 
-	int tointtime() {
+	int toIntTime() {
 		time_t current_time;
 		time(&current_time);
-		return tointtime(current_time);
+		return toIntTime(current_time);
 	}
 
-	int tointdate(time_t time) {
+	int toIntDate(time_t time) {
 		struct tm timeinfo;
 		LOCALTIME_S(&timeinfo, &time);
 
 		return ((timeinfo.tm_year + 1900) * 10000) + ((timeinfo.tm_mon + 1) * 100) + timeinfo.tm_mday;
 	}
 
-	int tointtime(time_t time) {
+	int toIntTime(time_t time) {
 		//std::time_t rawtime;
 		//std::tm* timeinfo;
 		//char queryTime[80];
@@ -174,7 +174,7 @@ namespace StarBright {
 	}
 
 	// convert to # of seconds
-	int inttimetointtimespan(int time) {
+	int intTimeToIntTimespan(int time) {
 		int s1 = time % 100;
 		int m1 = ((time - s1) / 100) % 100;
 		int h1 = (int)((time - (m1 * 100) - s1) / 10000);
@@ -183,7 +183,7 @@ namespace StarBright {
 	}
 
 	// # of seconds to int time
-	int inttimespantointtime(int timespan) {
+	int intTimespanToIntTime(int timespan) {
 		int hour = timespan / 3600;
 		int second = timespan % 3600;
 		int minute = second / 60;
@@ -192,7 +192,7 @@ namespace StarBright {
 	}
 
 	// adds inttime and int timespan (in seconds).  does not rollover 24hr periods.
-	int inttimeadd(int firsttime, int timespaninseconds)
+	int intTimeAdd(int firsttime, int timespaninseconds)
 	{
 		int s1 = firsttime % 100;
 		int m1 = ((firsttime - s1) / 100) % 100;
@@ -212,10 +212,10 @@ namespace StarBright {
 		return sum;
 	}
 
-	int inttimediff(int firsttime, int latertime)
+	int intTimeDiff(int firsttime, int latertime)
 	{
-		int span1 = inttimetointtimespan(firsttime);
-		int span2 = inttimetointtimespan(latertime);
+		int span1 = intTimeToIntTimespan(firsttime);
+		int span2 = intTimeToIntTimespan(latertime);
 		return span2 - span1;
 	}
 }

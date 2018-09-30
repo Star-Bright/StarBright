@@ -16,29 +16,29 @@
 
 namespace StarBright {
 
-struct position {
+struct Position {
 	std::string account = "";
 	std::string api = "";
-	std::string symbol = "";
-	double avePrice = "";
+	std::string securityDetails = "";
+	double avgPrice = "";
 	int preSize = "";
 	int size = "";
 	int freezedSize = "";
-	double unrealizedPnL = "";
-	double realizedPnL = "";
+	double UnrealizedPnL = "";
+	double RealizedPnL = "";
 
  	template <class Archive>
  	void serialize(Archive & arc)
  	 {
 		 arc(CEREAL_NVP(account),
 			 CEREAL_NVP(api),
-			 CEREAL_NVP(symbol),
-			 CEREAL_NVP(avePrice),
+			 CEREAL_NVP(securityDetails),
+			 CEREAL_NVP(avgPrice),
 			 CEREAL_NVP(preSize),
 			 CEREAL_NVP(size),
 			 CEREAL_NVP(freezedSize),
-			 CEREAL_NVP(unrealizedPnL),
-			 CEREAL_NVP(realizedPnL)
+			 CEREAL_NVP(UnrealizedPnL),
+			 CEREAL_NVP(RealizedPnL)
 			 );
  	 	 };
  	 	 string toJson(const std::regex& r){
@@ -50,11 +50,11 @@ struct position {
  	 		 	return regex_replace(ss.str(), r, "$1");
  	 	 }
 
- 	 	double Adjust(Fill& fill);
+ 	 	double AdjustPosition(Fill &fill);
 
- 	 			void updatePnL(double mktPrice);
+ 	 	void UpdatePnL(double marketPrice);
 
- 	 			void report();
+ 	 	void Report();
 	};
 
 }

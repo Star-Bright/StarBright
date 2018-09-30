@@ -19,18 +19,18 @@
 
 namespace StarBright
 {
-		 MessageQueue::MessageQueue(MSGQ_PROTOCOL protocol, string port){
+		 MessageQueue::MessageQueue(MessageQueueProtocol protocol, string port){
 		 protocol_ = protocol;
 		 port_ = port;
 	 }
-		 NanoMessageQueue::NanoMessageQueue(MSGQ_PROTOCOL protocol, string port, bool binding)
+		 NanoMessageQueue::NanoMessageQueue(MessageQueueProtocol protocol, string port, bool binding)
 		 : MessageQueue(protocol, port){
 
 #ifdef _DEBUG
 		std::printf("NANOMSG Protocol: %d  port %s  binding: %d\n", protocol, port.c_str(), binding);
 #endif
 
-		 if(protocol == MSGQ_PROTOCOL::PAIR)
+		 if(protocol == MessageQueueProtocol::PAIR)
 		 {
 			 sock_= nn_socket(AF_SP, NN_PAIR);
 			 assert(sock_>= 0);
@@ -46,14 +46,14 @@ namespace StarBright
 						eid_ = nn_connect(sock_, endpoint_.c_str());
 					}
 		 }
-		 else if(protocol_ == MSGQ_PROTOCOL::PUB)
+		 else if(protocol_ == MessageQueueProtocol::PUB)
 		 {
 			 sock_ = nn_socket(AF_SP, NN_PUB);
 			 assert(sock_ >= 0);
 			 endpoint_ = "tcp://*:" + port_;
 			 eid_ = nn_bind(sock_, endpoint_.c_str());
 		 }
-		 else if (protocol_ == MSGQ_PROTOCOL::SUB) {
+		 else if (protocol_ == MessageQueueProtocol::SUB) {
 		 			sock_ = nn_socket(AF_SP, NN_SUB);
 		 			assert(sock_ >= 0);
 		 			int to = 100;
@@ -102,12 +102,12 @@ namespace StarBright
 				}
 			}
 
-		 ZeroMessageQueue::ZeroMessageQueue(MSGQ_PROTOCOL protocol, string port, bool binding)
+		 ZeroMessageQueue::ZeroMessageQueue(MessageQueueProtocol protocol, string port, bool binding)
 		 		: MessageQueue(protocol, port) {
 		 #ifdef _DEBUG
 		 		std::printf("zmq protocol: %d  port %s  binding: %d\n", protocol, port.c_str(), binding);
 		 #endif
-		 		if (protocol_ == MSGQ_PROTOCOL::PAIR)
+		 		if (protocol_ == MessageQueueProtocol::PAIR)
 				{
 				    context_ = zmq_ctx_new();
 					socket_ = zmq_socket(context_, ZMQ_PAIR);
@@ -121,14 +121,14 @@ namespace StarBright
 						rc_ = zmq_connect(socket_, endpoint_.c_str());
 					}
 				}
-		 		else if (protocol_ == MSGQ_PROTOCOL::PUB) {
+		 		else if (protocol_ == MessageQueueProtocol::PUB) {
 		 					context_ = zmq_ctx_new();
 		 					socket_ = zmq_socket(context_, ZMQ_PUB);
 
 		 					endpoint_ = "tcp://*:" + port;
 		 					rc_ = zmq_bind(socket_, endpoint_.c_str());
 		 				}
-		 				else if (protocol_ == MSGQ_PROTOCOL::SUB) {
+		 				else if (protocol_ == MessageQueueProtocol::SUB) {
 		 					context_ = zmq_ctx_new();
 		 					socket_ = zmq_socket(context_, ZMQ_SUB);
 

@@ -25,10 +25,10 @@ using namespace std;
 namespace StarBright {
 class MessageQueue {
 protected:
-	MSGQ_PROTOCOL protocol_;
+	MessageQueueProtocol protocol_;
 	string port_;
 public:
-	MessageQueue(MSGQ_PROTOCOL protocol, string port);
+	MessageQueue(MessageQueueProtocol protocol, string port);
 	virtual void sendMessage(const string& str) = 0;
 	virtual void sendMessage(const char* str) = 0;
 	virtual string receiveMessage(int blockingFlap = 1) = 0;
@@ -42,7 +42,7 @@ private:
 	int eid_ = 0;
 	string endpoint_;
 public:
-	NanoMessageQueue(MSGQ_PROTOCOL protocl, string port, bool binding = true);
+	NanoMessageQueue(MessageQueueProtocol protocl, string port, bool binding = true);
 	~NanoMessageQueue();
 
 	void sendMessage(const string& str);
@@ -58,7 +58,7 @@ private:
 	int rc_;
 	char buf_[256];
 public:
-	ZeroMessageQueue(MSGQ_PROTOCOL protocol, string port, bool binding = true);
+	ZeroMessageQueue(MessageQueueProtocol protocol, string port, bool binding = true);
 	~ZeroMessageQueue();
 	void sendMessage(const string& str);
 	void sendMessage(const char* str);

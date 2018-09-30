@@ -8,6 +8,8 @@
 #ifndef _STARBRIGHT_BASESPEC_DATA_DATATYPE_H_
 #define _STARBRIGHT_BASESPEC_DATA_DATATYPE_H_
 
+#include <config.h>
+
 namespace StarBright {
 	enum DataType : int {
 		trade = 0,

@@ -10,7 +10,7 @@
 
 #include <sstream>
 #include <iterator>
-//#include <future>
+#include <future>
 #include <BaseSpec/config.h>
 #include <BaseSpec/Logger/logger.h>
 #include <BaseSpec/Time/getRealTime.h>
@@ -22,7 +22,7 @@ using std::pair;
 namespace StarBright {
 int checkShutdown(bool force = true);
 
-	vector<string> stringSplit(const string &s, char delim);
+	vector<string> stringSplit(const string &message, char delim);
 	bool startWith(const string&, const string&);
 	bool endWith(const string &str, const string &suffix);
 }

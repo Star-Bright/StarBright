@@ -6,8 +6,9 @@
  */
 #ifndef _STARBRIGHT_BASESPEC_ORDER_ORDER_H_
 #define _STARBRIGHT_BASESPEC_ORDER_ORDER_H_
-#include <BaseSpec/config.h>
-#include <BaseSpec/Order/orderStatus.h>
+
+#include <config.h>
+#include <Order/orderStatus.h>
 
 namespace StarBright {
 
@@ -20,7 +21,7 @@ struct Order{
 	, clientId(0)
 	, createTime("")
 	, cancelTime("")
-	, fullSymbol("")
+	, securityDetails("")
 	, account("")
 	, api("")
 	, source(-1)
@@ -50,7 +51,7 @@ struct Order{
 	long clientId;
 	string createTime;
 	string cancelTime;
-	string fullSymbol;
+	string securityDetails;
 	string account;
 	string api;						// IB, ctp etc
 	int source;						// sid, get from client; 0=mannual
@@ -74,16 +75,16 @@ struct Order{
 	void serialize(Archive & arc){
 		arc(cereal::make_nvp("serverOrderId", serverOrderId),
 			cereal::make_nvp("clientOrderId", clientOrderId),
-			cereal::make_nvp("symbol", fullSymbol),
-			cereal::make_nvp("type", orderType),
-			cereal::make_nvp("size", orderSize),
-			cereal::make_nvp("s", orderStatus),
-			cereal::make_nvp("lp", limitPrice),
-			cereal::make_nvp("sp", stopPrice),
-			cereal::make_nvp("tp", trailPrice),
-			cereal::make_nvp("lfp", lastFilledPrice),
-			cereal::make_nvp("f", filledSize),
-			cereal::make_nvp("c", createTime)
+			cereal::make_nvp("securityDetails", securityDetails),
+			cereal::make_nvp("orderType", orderType),
+			cereal::make_nvp("orderSize", orderSize),
+			cereal::make_nvp("orderStatus", orderStatus),
+			cereal::make_nvp("limitPrice", limitPrice),
+			cereal::make_nvp("stopPrice", stopPrice),
+			cereal::make_nvp("trailPrice", trailPrice),
+			cereal::make_nvp("lastFilledPrice", lastFilledPrice),
+			cereal::make_nvp("filledSize", filledSize),
+			cereal::make_nvp("createTime", createTime)
 		);
 	}
 

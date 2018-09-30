@@ -4,9 +4,10 @@
  *  Created on: 1 Sep 2018
  *      Author: User
  */
-#ifndef _STARBRIGHT_BASESPEC_ORDER_FILL_H_
-#define _STARBRIGHT_BASESPEC_ORDER_FILL_H_
-#include <BaseSpec/config.h>
+#ifndef __STARBRIGHT_BASESPEC_ORDER_FILL_H_
+#define __STARBRIGHT_BASESPEC_ORDER_FILL_H_
+
+#include <config.h>
 
 namespace StarBright
 {
@@ -18,7 +19,7 @@ struct Fill {
 	,tradeId(-1)
 	,clientId(0)
 	,tradeTime("")
-	,fullSymbol("")
+	,securityDetails("")
 	,account("")
 	,api("")
 	,source(-1)
@@ -36,7 +37,7 @@ struct Fill {
 	 long tradeId;
 	 long clientId;
 	 string tradeTime;
-	 string fullSymbol;
+	 string securityDetails;
 	 string account;
 	 string api;
 	 long source;
@@ -46,15 +47,15 @@ struct Fill {
 	 double commission;
 
 	 	 template<class Archive>
-		 void serialize(Archive arc){
-	 		 arc(cereal::make_nvp("serverOrderId", serverOrderId),
+		 void serialize(Archive archive){
+	 		 archive(cereal::make_nvp("serverOrderId", serverOrderId),
 				 cereal::make_nvp("clientOrderId", clientOrderId),
 				 cereal::make_nvp("brokerOrderId", brokerOrderId),
 				 cereal::make_nvp("tradeId", tradeId),
-				 cereal::make_nvp("symbol", fullSymbol),
-				 cereal::make_nvp("price", tradePrice),
-				 cereal::make_nvp("size", tradeSize),
-				 cereal::make_nvp("time", tradeTime)
+				 cereal::make_nvp("securityDetails", securityDetails),
+				 cereal::make_nvp("tradePrice", tradePrice),
+				 cereal::make_nvp("tradeSize", tradeSize),
+				 cereal::make_nvp("tradeTime", tradeTime)
 	 );
 	 }
 	 string serialize(){
@@ -62,7 +63,7 @@ struct Fill {
 		 + SERIALIZATION_SEPARATOR + std::to_string(clientOrderId)
 		 + SERIALIZATION_SEPARATOR + std::to_string(brokerOrderId)
 		 + SERIALIZATION_SEPARATOR + std::to_string(tradeId)
-		 + SERIALIZATION_SEPARATOR + fullSymbol
+		 + SERIALIZATION_SEPARATOR + securityDetails
 		 + SERIALIZATION_SEPARATOR + tradeTime
 		 + SERIALIZATION_SEPARATOR + std::to_string(tradePrice)
 		 + SERIALIZATION_SEPARATOR + std::to_string(tradeSize)
@@ -79,8 +80,8 @@ struct Fill {
 	 string toJson(const std::regex& r){
 		 std::stringstream ss;
 		 {
-			 cereal::JSONOutputArchive oarchive(ss);
-			 oarchive(cereal::make_nvp("trade", *this));
+			 cereal::JSONOutputArchive outputArchive(ss);
+			 outputArchive(cereal::make_nvp("trade", *this));
 		 }
 		 return regex_replace(ss.str(), r, "$1");
 	 }
@@ -88,4 +89,4 @@ struct Fill {
 }
 
 
-#endif /* _STARBRIGHT_BASESPEC_ORDER_FILL_H_ */
+#endif /* __STARBRIGHT_BASESPEC_ORDER_FILL_H_ */

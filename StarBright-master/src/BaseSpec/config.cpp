@@ -9,9 +9,10 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/ini_parser.hpp>
 #include <boost/filesystem.hpp>
-#include <BaseSpec/config.h>
-#include <BaseSpec/Util/util.h>
+#include <config.h>
+#include <Util/util.h>
 #include <yaml-cpp/yaml.h>
+
 
 namespace BoostPropertyTree = boost::property_tree;
 namespace BoostProgramOption = boost::program_options;
@@ -19,23 +20,23 @@ namespace BoostFileSystem = boost::filesystem;
 
 namespace StarBright {
 
-	Config* Config::instance_ = nullptr;
-	//mutex Config::instanceLock_; //TODO fix mutex problem
+	Configuration *Configuration::instance_ = nullptr;
+	//mutex Configuration::instanceLock_; //TODO fix mutex problem
 
-	Config::Config() {
-	readConfig();
+	Configuration::Configuration() {
+		readConfiguration();
 	}
-	Config& Config::instance(){
+	Configuration &Configuration::instance(){
 		if(instance_ == nullptr){
 			//mutex lock_guard::instanceLock_;
 			if(instance_ == nullptr){
-				instance_ = Config();
+				instance_ = Configuration();
 			}
 		}
 	return *instance_;
 	}
 
-	void Config::readConfig(){
+	void Configuration::readConfiguration(){
 #ifdef _DEBUG
 		std::printf("Current path is : %s\n", boost::filesystem::current_path().string().c_str());
 #endif
@@ -52,11 +53,11 @@ namespace StarBright {
 
 		const string msgq = config["msgq"].as<std::string>();
 		if (msgq == "zmq")
-			msgQ = MSGQ::ZMQ;
+			messageQueue = MsgQueue::ZMQ;
 		else if (msgq == "kafka")
-			msgQ = MSGQ::KAFKA;
+			messageQueue = MsgQueue::KAFKA;
 		else
-			msgQ = MSGQ::NANOMSG;
+			messageQueue = MsgQueue::NANOMSG;
 		const std::vector<string> accounts = config["api"].as<std::vector<string>>();
 		for( auto s: accounts){
 		const string api = config[s]["api"].as<std::string>();
@@ -91,16 +92,16 @@ namespace StarBright {
 		}
       }
 	}
-	string Config::configDir()
+	string Configuration::configDir()
 	{	return boost::filesystem::current_path().string();
 		return _config_dir;
 	}
-	string Config::dataDir()
+	string Configuration::dataDir()
 	{	boost::filesystem::path full_path = boost::filesystem::current_path() / "log";
 		return full_path.string();
 		return _data_dir;
 	}
-	string Config::logDir()
+	string Configuration::logDir()
 	{	boost::filesystem::path full_path = boost::filesystem::current_path() / "data";
 		return full_path.string();
 		return _log_dir;

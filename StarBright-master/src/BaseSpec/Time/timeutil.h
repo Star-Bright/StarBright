@@ -51,14 +51,14 @@ namespace StarBright {
 	string time_t2str(time_t tt);
 	time_t ptime2time(ptime t);
 
-	int tointdate();
-	int tointtime();
-	int tointdate(time_t time);
-	int tointtime(time_t time);
-	int inttimetointtimespan(int time);							// convert to # of seconds
-	int inttimespantointtime(int timespan);						// # of seconds to int time
-	int inttimeadd(int firsttime, int timespaninseconds);		// in seconds
-	int inttimediff(int firsttime, int latertime);				// in seconds
+	int toIntDate();
+	int toIntTime();
+	int toIntDate(time_t time);
+	int toIntTime(time_t time);
+	int intTimeToIntTimespan(int time);							// convert to # of seconds
+	int intTimespanToIntTime(int timespan);						// # of seconds to int time
+	int intTimeAdd(int firsttime, int timespaninseconds);		// in seconds
+	int intTimeDiff(int firsttime, int latertime);				// in seconds
 }
 
 #endif   // _StarBright_BaseSpec_TimeUtil_H
