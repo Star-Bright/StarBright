@@ -13,27 +13,32 @@
 #include <mutex>
 #include <regex>
 #include <atomic>
+#include <iterator>
 #include <map>
-#include <BaseSpec/config.h>
-#include <BaseSpec/Account/accountInfo.h>
-#include <BaseSpec/Security/position.h>
-#include <BaseSpec/Security/security.h>
-#include <BaseSpec/Order/orderStatus.h>
-#include <BaseSpec/Order/order.h>
-#include <BaseSpec/Logger/logger.h>
+#include <config.h>
+#include <Account/accountInfo.h>
+#include <Security/position.h>
+#include <Security/security.h>
+#include <Order/orderStatus.h>
+#include <Order/order.h>
+#include <Logger/logger.h>
+#include <Order/fill.h>
 
 using namespace std;
 
 namespace StarBright {
-	class DLL_EXPORT_IMPORT PortfolioManager {
+
+	class PortfolioManager {
 		public:
+
 		PortfolioManager();
 		~PortfolioManager();
+
 		static PortfolioManager *portfolioManagerInstance;
-		//static mutex instanceLock;
+		static mutex instanceLock;
 		static PortfolioManager &instance();
-		//atomic<uint64_t> _count = { 0 };
-		uint64_t count = 0;
+		atomic<uint64_t> count = { 0 }; // atomic prevents data race
+		// uint64_t count = 0;
 		AccountInfo account;
 
 		map<string, Security> securities;

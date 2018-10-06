@@ -5,12 +5,13 @@
  *      Author: User
  */
 
-#include <BaseSpec/config.h>
-#include <BaseSpec/MessageQueue/messageQueue.h>
+#include <config.h>
+#include <Logger/logger.h>
+#include <MessageQueue/messageQueue.h>
 
 #ifdef _WIN32
-#include <nanomsg/src/nn.h>
-#include <nanomsg/src/pair.h>
+#include <nn.h>
+#include <pair.h>
 #else
 #include <nanomsg/nn.h>
 #include <nanomsg/pair.h>
@@ -63,7 +64,7 @@ namespace StarBright
 		 			eid_ = nn_connect(sock_, endpoint_.c_str());
 		 		}
 		 if (eid_ < 0 || sock_ < 0) {
-		 			PRINT_TO_FILE_AND_CONSOLE("ERROR:[%s,%d][%s]Unable to connect to message queue: %s,%d\n");//, __FILE__, __LINE__, __FUNCTION__, port.c_str(), binding);
+		 			PRINT_TO_FILE_AND_CONSOLE("ERROR:[%s,%d][%s]Unable to connect to message queue: %s,%d\n", __FILE__, __LINE__, __FUNCTION__, port.c_str(), binding);
 		 		}
 		 }
 

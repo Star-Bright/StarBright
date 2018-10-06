@@ -5,18 +5,20 @@
  *      Author: User
  */
 
-#include <BaseSpec/Security/position.h>
-#include <BaseSpec/Util/util.h>
-#include <BaseSpec/Util/pnl.h>
-#include <BaseSpec/Logger/logger.h>
-#include <BaseSpec/config.h>
+#include <Security/position.h>
+#include <Util/util.h>
+#include <Util/pnl.h>
+#include <Logger/logger.h>
+#include <config.h>
 
 namespace StarBright {
 		double Position::AdjustPosition(Fill& fill) {
-		//PRINT_TO_FILE_AND_CONSOLE("INFO: [%s,%d][%s]Position is adjusted. OrderId=%d, price=%.2f\n", __FILE__, __LINE__, __FUNCTION__, fill.tradeId, fill.tradePrice);
-		if (fill.securityDetails != securityDetails)
+
+		    PRINT_TO_FILE_AND_CONSOLE("INFO: [%s,%d][%s]Position is adjusted. OrderId=%d, price=%.2f\n", __FILE__, __LINE__, __FUNCTION__, fill.tradeId, fill.tradePrice);
+
+		    if (fill.securityDetails != securityDetails)
 		{
-			//PRINT_TO_FILE_AND_CONSOLE("ERROR:[%s,%d][%s]Position adjustment failed because adjustment symbol did not match position symbol\n", __FILE__, __LINE__, __FUNCTION__);
+			PRINT_TO_FILE_AND_CONSOLE("ERROR:[%s,%d][%s]Position adjustment failed because adjustment symbol did not match position symbol\n", __FILE__, __LINE__, __FUNCTION__);
 		 return 0.0;
 		}
 
@@ -44,8 +46,7 @@ namespace StarBright {
 		}
 
 		void Position::Report() {
-			//PRINT_TO_FILE("INFO:[%s,%d][%s]Portfolio:nlc=%.4f,cashRemaining=%.4f,myInv=%.4f,lcc=%.4f,unrPNL=%.4f\n",
-				//__FILE__, __LINE__, __FUNCTION__, nlc, cR, inve, lcc, uPNL);
+			PRINT_TO_FILE("INFO:[%s,%d][%s]Portfolio:nlc=%.4f,cashRemaining=%.4f,myInv=%.4f,lcc=%.4f,unrPNL=%.4f\n", __FILE__, __LINE__, __FUNCTION__, UnrealizedPnL); //TODO add other variables
 		}
 }
 

@@ -4,7 +4,7 @@
  *  Created on: 27 Aug 2018
  *      Author: User
  */
-#include <BaseSpec/Time/getRealTime.h>
+#include <Time/getRealTime.h>
 
 namespace StarBright{
 

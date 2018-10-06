@@ -5,32 +5,35 @@
 #ifndef common_defs_h_INCLUDED
 #define common_defs_h_INCLUDED
 
-namespace IBOfficial {
 
-	typedef long TickerId;
-	typedef long OrderId;
+	namespace IBOfficial {
 
-	enum faDataType { GROUPS = 1, PROFILES, ALIASES };
+		typedef long TickerId;
+		typedef long OrderId;
 
-	inline const char* faDataTypeStr(faDataType pFaDataType)
-	{
-		switch (pFaDataType) {
-		case GROUPS:
-			return "GROUPS";
-		case PROFILES:
-			return "PROFILES";
-		case ALIASES:
-			return "ALIASES";
+		enum faDataType {
+			GROUPS = 1, PROFILES, ALIASES
+		};
+
+		inline const char *faDataTypeStr(faDataType pFaDataType) {
+			switch (pFaDataType) {
+				case GROUPS:
+					return "GROUPS";
+				case PROFILES:
+					return "PROFILES";
+				case ALIASES:
+					return "ALIASES";
+			}
+			return 0;
 		}
-		return 0;
+
+		enum MarketDataType {
+			REALTIME = 1,
+			FROZEN = 2,
+			DELAYED = 3,
+			DELAYED_FROZEN = 4
+		};
+
 	}
 
-	enum MarketDataType {
-		REALTIME = 1,
-		FROZEN = 2,
-		DELAYED = 3,
-		DELAYED_FROZEN = 4
-	};
-
-}
 #endif /* common_defs_h_INCLUDED */

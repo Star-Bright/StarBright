@@ -9,27 +9,25 @@
 #define _STARBRIGHT_BASESPEC_LOGGER_LOGGER_H_
 
 #include <stdarg.h>
-#include <stdio.h>
-#include <time.h>
-#include <mutex>
+#include <config.h>
 
 #include "../../BaseSpec/Time/timeutil.h"
 
 namespace StarBright {
 
 class Logger {
-		static Logger* instance_;
-		//static mutex instancelock_;
+		static Logger *instance_;
+		//static mutex instanceLock_;
 
-		FILE* logfile = nullptr;
+		FILE *logfile = nullptr;
 		Logger();
 		~Logger();
 public:
-		static Logger& instance();
+		static Logger &instance();
 
 		void Initialize();
 
-		void Print2file (const char *format, ...);
+		void PrintfToFile(const char *format, ...);
 	};
 }
 

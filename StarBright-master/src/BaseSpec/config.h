@@ -7,7 +7,6 @@
 #ifndef __STARBRIGHT_BASESPEC_CONFIG_H_
 #define __STARBRIGHT_BASESPEC_CONFIG_H_
 
-#include <inttypes.h>
 #include <cmath>
 #include <mutex>
 #include <algorithm>
@@ -24,6 +23,13 @@
 #include <memory>
 #include <string>
 #include <regex>
+#include <iterator>
+#include <future>
+#include <chrono>
+#include <thread>
+#include <ctime>
+#include <numeric>
+#include "../Thread/mingw.mutex.h"
 //BOOST: contains c++ libraries
 #include <boost/filesystem.hpp>
 
@@ -51,6 +57,8 @@
 #include <Windows.h>
 
 #include<WinSock2.h>
+
+
 #else
 #include <unistd.h>
 #endif
@@ -58,7 +66,7 @@
 using std::vector;
 using std::string;
 using std::set;
-//using std::mutex;
+using std::mutex;
 using std::map;
 using std::atomic_int;
 
@@ -66,14 +74,14 @@ namespace StarBright {
 
 #define SERIALIZATION_SEPARATOR '|'
 
-#define PRINT_TO_FILE logger::instance().Printf2File
+#define PRINT_TO_FILE Logger::instance().PrintfToFile
 
 #define PRINT_TO__CONSOLE(...) do{\
 printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 }while (0)
 
 #define PRINT_TO_FILE_AND_CONSOLE(...) do{\
-logger::instance().Printf2File(__VA_ARGS__);\
+Logger::instance().PrintfToFile(__VA_ARGS__);\
 printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 }while (0)
 
@@ -103,7 +111,7 @@ printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 	class Configuration {
 	public:
 		static Configuration *instance_;
-		//static mutex instanceLock_;
+		static mutex instanceLock;
 
 		Configuration();
 

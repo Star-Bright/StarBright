@@ -1,5 +1,5 @@
-#include <BaseSpec/Time/heartbeat.h>
-#include <BaseSpec/Util/util.h>
+#include <Time/heartbeat.h>
+#include <Util/util.h>
 
 namespace StarBright
 {

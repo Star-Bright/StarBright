@@ -7,7 +7,7 @@
 #ifndef _STARBRIGHT_BASESPEC_ORDER_ORDERSTATUS_H_
 #define _STARBRIGHT_BASESPEC_ORDER_ORDERSTATUS_H_
 
-#include <BaseSpec/config.h>
+#include <config.h>
 
 namespace StarBright {
 

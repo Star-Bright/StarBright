@@ -8,9 +8,6 @@
 #ifndef __STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_
 #define __STARBRIGHT_BASESPEC_SECURITY_SECURITY_H_
 
-#include <string>
-#include <sstream>
-#include <regex>
 
 #include <cereal/types/unordered_map.hpp>
 #include <cereal/types/memory.hpp>
@@ -18,8 +15,9 @@
 #include <cereal/types/vector.hpp>
 #include <cereal/types/string.hpp>
 #include <cereal/types/map.hpp>
-#include <BaseSpec/Data/datatype.h>
-#include <BaseSpec/config.h>
+#include <Data/datatype.h>
+#include <config.h>
+
 using std::string;
 
 namespace StarBright
@@ -69,9 +67,9 @@ namespace StarBright
 		}
 
 		template<class Archive>
-		void serialize(Archive & arc)
+		void serialize(Archive & archive)
 		{
-			arc(cereal::make_nvp("symbol", symbol),
+			archive(cereal::make_nvp("symbol", symbol),
 				cereal::make_nvp("securityType", securityType),
 				cereal::make_nvp("exchange", exchange),
 				cereal::make_nvp("multiplier", multiplier),
@@ -85,8 +83,8 @@ namespace StarBright
 		string toJson(const std::regex& r) {
 			std::stringstream ss;
 			{
-				cereal::JSONOutputArchive oarchive;
-				oarchive(cereal::make_nvp("order", *this));
+				cereal::JSONOutputArchive outputArchive(ss);
+				outputArchive(cereal::make_nvp("order", *this));
 			}
 			return regex_replace(ss.str(), r, "$1");
 		}

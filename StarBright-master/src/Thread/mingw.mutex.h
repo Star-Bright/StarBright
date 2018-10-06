@@ -299,10 +299,10 @@ class recursive_timed_mutex
             return false;
         case WAIT_OBJECT_0:
             return true;
-        case WAIT_ABANDONED:
-            throw system_error(make_error_code(errc::owner_dead));
-        default:
-            throw system_error(make_error_code(errc::protocol_error));
+       // case WAIT_ABANDONED:
+            //throw system_error(make_error_code(errc::owner_dead));
+        //default:
+            //throw system_error(make_error_code(errc::protocol_error));
         }
     }
 protected:

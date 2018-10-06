@@ -8,11 +8,11 @@
 #ifndef _STARBRIGHT_BASESPEC_MESSAGEQUEUE_MESSAGEQUEUE_H_
 #define _STARBRIGHT_BASESPEC_MESSAGEQUEUE_MESSAGEQUEUE_H_
 
-#include <BaseSpec/config.h>
+#include <config.h>
 
 #ifdef _WIN32
-#include <nanomsg/src/nn.h>
-#include <nanomsg/src/pubsub.h>
+#include <nn.h>
+#include <pubsub.h>
 #else
 #include <nanomsg/nn.h>
 #include <nanomsg/pubsub.h>
@@ -29,11 +29,9 @@ protected:
 	string port_;
 public:
 	MessageQueue(MessageQueueProtocol protocol, string port);
-	virtual void sendMessage(const string& str) = 0;
-	virtual void sendMessage(const char* str) = 0;
+	virtual void sendMessage(const string &str) = 0;
+	virtual void sendMessage(const char *str) = 0;
 	virtual string receiveMessage(int blockingFlap = 1) = 0;
-
-	virtual ~MessageQueue(){};
 };
 
 class DLL_EXPORT_IMPORT NanoMessageQueue: public MessageQueue {
@@ -42,26 +40,27 @@ private:
 	int eid_ = 0;
 	string endpoint_;
 public:
-	NanoMessageQueue(MessageQueueProtocol protocl, string port, bool binding = true);
+	NanoMessageQueue(MessageQueueProtocol protocol, string port, bool binding = true);
 	~NanoMessageQueue();
 
-	void sendMessage(const string& str);
-	void sendMessage(const char* str);
+	void sendMessage(const string &str);
+	void sendMessage(const char *str);
 	string receiveMessage(int blockingFlag = 1);
    };
 
 class ZeroMessageQueue: public MessageQueue {
 private:
-	void* context_;
-	void* socket_;
+	void *context_;
+	void *socket_;
 	string endpoint_;
 	int rc_;
 	char buf_[256];
 public:
 	ZeroMessageQueue(MessageQueueProtocol protocol, string port, bool binding = true);
 	~ZeroMessageQueue();
-	void sendMessage(const string& str);
-	void sendMessage(const char* str);
+
+	void sendMessage(const string &str);
+	void sendMessage(const char *str);
 	string receiveMessage(int blockingFlag = 1);
 	};
 }

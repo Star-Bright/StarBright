@@ -8,11 +8,12 @@
 #ifndef _STARBRIGHT_BASESPEC_SECURITY_POSITION_H_
 #define _STARBRIGHT_BASESPEC_SECURITY_POSITION_H_
 
-#include <BaseSpec/config.h>
-#include <BaseSpec/Logger/logger.h>
-#include <BaseSpec/Order/orderStatus.h>
-#include <BaseSpec/Order/fill.h>
-#include <BaseSpec/Order/order.h>
+#include <config.h>
+#include <algorithm>
+#include <Logger/logger.h>
+#include <Order/orderStatus.h>
+#include <Order/fill.h>
+#include <Order/order.h>
 
 namespace StarBright {
 
@@ -20,17 +21,19 @@ struct Position {
 	std::string account = "";
 	std::string api = "";
 	std::string securityDetails = "";
-	double avgPrice = "";
-	int preSize = "";
-	int size = "";
-	int freezedSize = "";
-	double UnrealizedPnL = "";
-	double RealizedPnL = "";
+	double avgPrice = 0.0;
+	int preSize = 0;
+	int size = 0;
+	int freezedSize = 0;
+	double UnrealizedPnL = 0.0;
+	double RealizedPnL = 0.0;
+
+	map<int, Position> positions;
 
  	template <class Archive>
- 	void serialize(Archive & arc)
+ 	void serialize(Archive & archive)
  	 {
-		 arc(CEREAL_NVP(account),
+		 archive(CEREAL_NVP(account),
 			 CEREAL_NVP(api),
 			 CEREAL_NVP(securityDetails),
 			 CEREAL_NVP(avgPrice),
@@ -44,8 +47,8 @@ struct Position {
  	 	 string toJson(const std::regex& r){
  	 		 std::stringstream ss;
  	 		 {
- 	 			cereal::JSONOutputArchive oarchive(ss);
- 	 			oarchive(cereal::make_nvp("portfolio", *this));
+ 	 			cereal::JSONOutputArchive outputArchive(ss);
+ 	 			outputArchive(cereal::make_nvp("portfolio", *this));
  	 		 }
  	 		 	return regex_replace(ss.str(), r, "$1");
  	 	 }

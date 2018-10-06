@@ -28,7 +28,7 @@ namespace StarBright {
 	}
 	Configuration &Configuration::instance(){
 		if(instance_ == nullptr){
-			//mutex lock_guard::instanceLock_;
+			mutex lock_guard::instanceLock_;
 			if(instance_ == nullptr){
 				instance_ = Configuration();
 			}

@@ -8,9 +8,9 @@
 #ifndef _STARBRIGHT_BASESPEC_UTIL_PNL_H_
 #define _STARBRIGHT_BASESPEC_UTIL_PNL_H_
 
-#include <BaseSpec/config.h>
-#include <BaseSpec/Security/position.h>
-#include <BaseSpec/Order/fill.h>
+#include <config.h>
+#include <Security/position.h>
+#include <Order/fill.h>
 
 namespace StarBright {
 

@@ -8,12 +8,10 @@
 #ifndef __STARBRIGHT_BASESPEC_UTIL_UTIL_H_
 #define __STARBRIGHT_BASESPEC_UTIL_UTIL_H_
 
-#include <sstream>
-#include <iterator>
-#include <future>
-#include <BaseSpec/config.h>
-#include <BaseSpec/Logger/logger.h>
-#include <BaseSpec/Time/getRealTime.h>
+
+#include <config.h>
+#include <Logger/logger.h>
+#include <Time/getRealTime.h>
 
 using std::string;
 using std::vector;
@@ -22,7 +20,7 @@ using std::pair;
 namespace StarBright {
 int checkShutdown(bool force = true);
 
-	vector<string> stringSplit(const string &message, char delim);
+	vector<string> stringSplit(const string &message, char delimiter);
 	bool startWith(const string&, const string&);
 	bool endWith(const string &str, const string &suffix);
 }

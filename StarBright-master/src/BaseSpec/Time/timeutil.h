@@ -3,20 +3,16 @@
 
 #include <chrono> //for msleep
 #include <thread> //for msleep
-#include <ctime>
-#include <mutex>
-#include <sstream>
-#include <iterator>
+#include <config.h>
+
 #include <boost/date_time/posix_time/ptime.hpp>
 #include <boost/date_time/local_time/local_time_types.hpp>
 #include <boost/date_time/local_time/local_time_io.hpp>
 
-#include <BaseSpec/config.h>
-
 using std::string;
 using std::vector;
 using std::pair;
-//using std::mutex;
+using std::mutex;
 using std::set;
 using std::locale;
 using boost::posix_time::ptime;

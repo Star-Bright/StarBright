@@ -40,6 +40,8 @@
 
 #ifndef NDEBUG
 #include <cstdio>
+#include <winbase.h>
+
 #endif
 
 //instead of INVALID_HANDLE_VALUE _beginthreadex returns 0
@@ -211,8 +213,9 @@ private:
 
     static unsigned int _hardware_concurrency_helper() noexcept
     {
+       void GetNativeSystemInfo(SYSTEM_INFO sysInfo);
         SYSTEM_INFO sysinfo;
-        ::GetNativeSystemInfo(&sysinfo);
+        GetNativeSystemInfo(sysinfo);
         return sysinfo.dwNumberOfProcessors;
     }
 public:

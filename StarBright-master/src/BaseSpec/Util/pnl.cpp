@@ -4,9 +4,9 @@
  *  Created on: 15 Sep 2018
  *      Author: User
  */
-#include <cmath>
-#include <BaseSpec/config.h>
-#include <BaseSpec/Util/pnl.h>
+
+#include <config.h>
+#include <Util/pnl.h>
 
 using namespace std;
 

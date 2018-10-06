@@ -7,10 +7,9 @@
 
 #ifndef BASESPEC_ACCOUNT_ACCOUNTINFO_H_
 #define BASESPEC_ACCOUNT_ACCOUNTINFO_H_
-#include <sstream>
-#include <regex>
-#include <BaseSpec/config.h>
-#include <BaseSpec/Data/datatype.h>
+
+#include <config.h>
+#include <Data/datatype.h>
 
 namespace StarBright {
 
@@ -27,7 +26,7 @@ namespace StarBright {
 	double PreviousDayEquityWithLoanValue = 0.0;
 
 	double FullInitialMargin = 0.0;
-	double FullMaintainanceMargin = 0.0;
+	double FullMaintenanceMargin = 0.0;
 	double Commission = 0.0;
 
 	double BuyingPower = 0.0;
@@ -45,15 +44,15 @@ namespace StarBright {
 	{
 		arc(CEREAL_NVP(AccountID), CEREAL_NVP(AccountType), CEREAL_NVP(AvailableFunds),
 			CEREAL_NVP(NetLiquidation), CEREAL_NVP(EquityWithLoanValue), CEREAL_NVP(PreviousDayEquityWithLoanValue),
-			CEREAL_NVP(FullInitialMargin), CEREAL_NVP(FullMaintainanceMargin), CEREAL_NVP(Commission),
+			CEREAL_NVP(FullInitialMargin), CEREAL_NVP(FullMaintenanceMargin), CEREAL_NVP(Commission),
 			CEREAL_NVP(BuyingPower), CEREAL_NVP(CashBalance), CEREAL_NVP(RealizedPnL), CEREAL_NVP(UnrealizedPnL)
 				);
 	}
 	string toJson(const std::regex& r){
 	std::stringstream ss;
 	{
-	cereal::JSONOutputArchive oarchive;
-	oarchive(cereal::make_nvp("accountInfo", *this));
+	cereal::JSONOutputArchive outputArchive(ss);
+	outputArchive(cereal::make_nvp("accountInfo", *this));
 	}
 	return regex_replace(ss.str(), r, "$1");
   }
@@ -87,13 +86,13 @@ namespace StarBright {
 				{
 			FullInitialMargin = atof(value.c_str());
 				}
-		else if (key == "FullMaintainanceMargin")
+		else if (key == "FullMaintenanceMargin")
 				{
-			FullMaintainanceMargin = atof(value.c_str());
+			FullMaintenanceMargin = atof(value.c_str());
 				}
-		else if (key == "FullMaintainanceMargin")
+		else if (key == "FullMaintenanceMargin")
 				{
-			FullMaintainanceMargin = atof(value.c_str());
+			FullMaintenanceMargin = atof(value.c_str());
 				}
 		else if (key == "Commission")
 				{
