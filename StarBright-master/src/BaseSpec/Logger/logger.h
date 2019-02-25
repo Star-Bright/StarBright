@@ -16,8 +16,8 @@
 namespace StarBright {
 
 class Logger {
-		static Logger *instance_;
-		//static mutex instanceLock_;
+		static Logger *logInstance;
+		static mutex instanceLock;
 
 		FILE *logfile = nullptr;
 		Logger();

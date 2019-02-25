@@ -1,7 +1,7 @@
 ﻿/* Copyright (C) 2013 Interactive Brokers LLC. All rights reserved. This code is subject to the terms
  * and conditions of the IB API Non-Commercial License or the IB API Commercial License, as applicable. */
 
-#include "StdAfx.h"
+// #include "StdAfx.h"
 #include "shared_ptr.h"
 #include "Contract.h"
 #include "EDecoder.h"
@@ -51,7 +51,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		m_hReadThread = CreateThread(0, 0, readToQueueThread, this, 0, 0);
 #else
-#   error "Not implemented on this platform"
+// #error "Not implemented on this platform"
 #endif
 	}
 
@@ -59,15 +59,15 @@ namespace IBOfficial {
 	void * EReader::readToQueueThread(void * lpParam)
 #elif defined(IB_WIN32)
 	DWORD WINAPI EReader::readToQueueThread(LPVOID lpParam)
-#else
-#   error "Not implemented on this platform"
+// #else
+// #   error "Not implemented on this platform"
 #endif
-	{
+	/*{ FIXME
 		EReader *pThis = reinterpret_cast<EReader *>(lpParam);
 
 		pThis->readToQueue();
 		return 0;
-	}
+	}*/
 
 	void EReader::readToQueue() {
 		EMessage *msg = 0;

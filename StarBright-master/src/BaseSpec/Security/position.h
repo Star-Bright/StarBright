@@ -9,7 +9,6 @@
 #define _STARBRIGHT_BASESPEC_SECURITY_POSITION_H_
 
 #include <config.h>
-#include <algorithm>
 #include <Logger/logger.h>
 #include <Order/orderStatus.h>
 #include <Order/fill.h>

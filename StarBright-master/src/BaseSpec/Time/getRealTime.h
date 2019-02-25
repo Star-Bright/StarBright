@@ -8,9 +8,6 @@
 *          http://creativecommons.org/licenses/by/3.0/deed.en_US
 */
 #include <inttypes.h>
-
-namespace StarBright
-{
 #if defined(_WIN32) || defined(_WIN64)
 #include <Windows.h>
 
@@ -27,6 +24,9 @@ namespace StarBright
 #else
 #error "Unable to define getRealTime( ) for an unknown OS."
 #endif
+namespace StarBright
+{
+
 
 #define __MILLI_MULTIPLE__ 1000
 #define __MICRO_MULTIPLE__ 1000000

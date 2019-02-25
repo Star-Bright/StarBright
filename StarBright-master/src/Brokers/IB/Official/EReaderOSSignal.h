@@ -3,7 +3,7 @@
 
 #pragma once
 #include "EReaderSignal.h"
-#include "StdAfx.h"
+// #include "StdAfx.h"
 #include <stdexcept>
 
 namespace IBOfficial {
@@ -11,7 +11,7 @@ namespace IBOfficial {
 #define INFINITE ((unsigned long)-1)
 #endif
 
-	class TWSAPIDLLEXP EReaderOSSignal :
+	class EReaderOSSignal :
 		public EReaderSignal
 	{
 #if defined(IB_POSIX)
@@ -20,7 +20,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		HANDLE m_evMsgs;
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 		unsigned long m_waitTimeout; // in milliseconds
 

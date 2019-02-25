@@ -7,6 +7,8 @@
 #ifndef __STARBRIGHT_BASESPEC_CONFIG_H_
 #define __STARBRIGHT_BASESPEC_CONFIG_H_
 
+#include <string>
+#include <assert.h>
 #include <cmath>
 #include <mutex>
 #include <algorithm>
@@ -21,7 +23,6 @@
 #include <fstream>
 #include <sstream>
 #include <memory>
-#include <string>
 #include <regex>
 #include <iterator>
 #include <future>
@@ -97,7 +98,7 @@ printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 		IB = 0, CTP, GOOGLE, SINA, PAPER, BTCC, OKCOIN
 	};
 
-	//nanomsg is a socket library that provides several common communication patterns.
+	// nanomsg is a socket library that provides several common communication patterns.
 	enum class MsgQueue : uint8_t
 	{
 		NANOMSG = 0, ZMQ, KAFKA, WEBSOCKET
@@ -110,7 +111,7 @@ printf("%s ",ymdhms().c_str());printf(__VA_ARGS__);\
 
 	class Configuration {
 	public:
-		static Configuration *instance_;
+		static Configuration *configInstance;
 		static mutex instanceLock;
 
 		Configuration();

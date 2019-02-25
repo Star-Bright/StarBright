@@ -4,7 +4,7 @@
 
 namespace IBOfficial {
 
-	class TWSAPIDLLEXP OrderCondition : public IExternalizable {
+	class OrderCondition : public IExternalizable {
 	public:
 		enum OrderConditionType {
 			Price = 1,

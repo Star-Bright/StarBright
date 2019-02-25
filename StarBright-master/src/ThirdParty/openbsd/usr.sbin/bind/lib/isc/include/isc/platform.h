@@ -1,0 +1,8 @@
+//
+// Created by User on 27/12/2018.
+//
+
+#ifndef STARBRIGHT_PLATFORM_H
+#define STARBRIGHT_PLATFORM_H
+
+#endif //STARBRIGHT_PLATFORM_H

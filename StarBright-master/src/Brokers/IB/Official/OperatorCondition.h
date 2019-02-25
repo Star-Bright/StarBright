@@ -3,7 +3,7 @@
 
 namespace IBOfficial {
 
-	class TWSAPIDLLEXP OperatorCondition : public OrderCondition {
+	class OperatorCondition : public OrderCondition {
 		bool m_isMore;
 
 	protected:

@@ -1,3 +1,4 @@
+
 /*! \file set.hpp
     \brief Support for types found in \<set\>
     \ingroup STLSupport */
@@ -32,6 +33,7 @@
 
 #include "cereal/cereal.hpp"
 #include <set>
+#include <afxres.h>
 
 namespace cereal
 {
@@ -41,7 +43,7 @@ namespace cereal
     template <class Archive, class SetT> inline
     void save( Archive & ar, SetT const & set )
     {
-      ar( make_size_tag( static_cast<size_type>(set.size()) ) );
+        ar( SizeTag<SetT>::make_size_tag( static_cast<size_type>(set.size())));
 
       for( const auto & i : set )
         ar( i );
@@ -52,7 +54,7 @@ namespace cereal
     void load( Archive & ar, SetT & set )
     {
       size_type size;
-      ar( make_size_tag( size ) );
+      ar( SizeTag<SetT>::make_size_tag( size ) );
 
       set.clear();
 

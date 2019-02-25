@@ -7,14 +7,6 @@
 #ifndef __STARBRIGHT_BASESPEC_SECURITY_PORTFOLIOMANAGER_H_
 #define __STARBRIGHT_BASESPEC_SECURITY_PORTFOLIOMANAGER_H_
 
-#include <string>
-#include <assert.h>
-#include <numeric>
-#include <mutex>
-#include <regex>
-#include <atomic>
-#include <iterator>
-#include <map>
 #include <config.h>
 #include <Account/accountInfo.h>
 #include <Security/position.h>
@@ -42,7 +34,8 @@ namespace StarBright {
 		AccountInfo account;
 
 		map<string, Security> securities;
-		map<int, Position> positions;
+		map<string, Position> positions;
+
 		double cash;
 
 		void reset();

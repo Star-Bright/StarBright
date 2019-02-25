@@ -160,7 +160,7 @@ namespace IBOfficial {
 	class EClient;
 	struct EClientMsgSink;
 
-	class TWSAPIDLLEXP EDecoder
+	class EDecoder
 	{
 		EWrapper *m_pEWrapper;
 		int m_serverVersion;

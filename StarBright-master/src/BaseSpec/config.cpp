@@ -20,20 +20,20 @@ namespace BoostFileSystem = boost::filesystem;
 
 namespace StarBright {
 
-	Configuration *Configuration::instance_ = nullptr;
-	//mutex Configuration::instanceLock_; //TODO fix mutex problem
+	Configuration *Configuration::configInstance = nullptr;
+	mutex Configuration::instanceLock; //TODO fix mutex problem
 
 	Configuration::Configuration() {
 		readConfiguration();
 	}
 	Configuration &Configuration::instance(){
-		if(instance_ == nullptr){
-			mutex lock_guard::instanceLock_;
-			if(instance_ == nullptr){
-				instance_ = Configuration();
+		if(configInstance == nullptr){
+			std::lock_guard<mutex> g(instanceLock);
+			if(configInstance == nullptr){
+				configInstance = new Configuration();
 			}
 		}
-	return *instance_;
+	return *configInstance;
 	}
 
 	void Configuration::readConfiguration(){

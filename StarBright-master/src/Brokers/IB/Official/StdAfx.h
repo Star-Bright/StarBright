@@ -24,7 +24,7 @@
     #include <pthread.h>
     #define IB_POSIX
 #else
-    #error "Not supported on this platform"
+// #error "Not supported on this platform"
 #endif
 
 #endif // #ifdef _MSC_VER

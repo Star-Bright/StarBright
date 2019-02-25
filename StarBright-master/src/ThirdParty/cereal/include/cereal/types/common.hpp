@@ -31,7 +31,7 @@
 #define CEREAL_TYPES_COMMON_HPP_
 
 #include "cereal/cereal.hpp"
-
+#include "cereal/details/traits.hpp"
 namespace cereal
 {
   namespace common_detail

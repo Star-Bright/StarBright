@@ -13,7 +13,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		InitializeCriticalSection(&cs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 
@@ -25,7 +25,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		DeleteCriticalSection(&cs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 
@@ -36,7 +36,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		return TryEnterCriticalSection(&cs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 
@@ -46,7 +46,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		EnterCriticalSection(&cs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 
@@ -56,7 +56,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		LeaveCriticalSection(&cs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 }

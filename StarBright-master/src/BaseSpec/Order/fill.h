@@ -12,21 +12,22 @@
 namespace StarBright
 {
 struct Fill {
+
 	Fill()
-	:serverOrderId(-1)
-	,clientOrderId(-1)
-	,brokerOrderId(-1)
-	,tradeId(-1)
-	,clientId(0)
-	,tradeTime("")
-	,securityDetails("")
-	,account("")
-	,api("")
-	,source(-1)
-	,currency("")
-	,tradePrice(0.0)
-	,tradeSize(0)
-	,commission(0.0)
+        :serverOrderId(-1)
+        ,clientOrderId(-1)
+        ,brokerOrderId(-1)
+        ,tradeId(-1)
+        ,clientId(0)
+        ,tradeTime("")
+        ,securityDetails("")
+        ,account("")
+        ,api("")
+        ,source(-1)
+        ,currency("")
+        ,tradePrice(0.0)
+        ,tradeSize(0)
+        ,commission(0.0)
 
 	{
 	}

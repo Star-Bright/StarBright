@@ -1,8 +1,9 @@
-﻿#include "StdAfx.h"
+﻿// #include "StdAfx.h"
 #include "EMessage.h"
 #include "ESocket.h"
 
 #include <assert.h>
+#include <winsock.h>
 
 #if defined(IB_POSIX)
 #include <sys/socket.h>

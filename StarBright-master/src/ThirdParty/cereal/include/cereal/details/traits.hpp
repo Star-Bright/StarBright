@@ -37,8 +37,9 @@
 #endif // __clang__
 
 #include <type_traits>
-#include <typeindex>
 
+#include <typeindex>
+// #include "C:\MinGW\lib\gcc\mingw32\6.3.0\include\c++\typeindex"
 #include "cereal/macros.hpp"
 #include "cereal/access.hpp"
 

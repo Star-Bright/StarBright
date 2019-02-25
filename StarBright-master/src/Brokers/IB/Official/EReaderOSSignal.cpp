@@ -20,7 +20,7 @@ namespace IBOfficial {
 		m_evMsgs = CreateEvent(0, false, false, 0);
 		ok = (NULL != m_evMsgs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 		if (!ok)
 			throw std::runtime_error("Failed to create event");
@@ -35,7 +35,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		CloseHandle(m_evMsgs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 
@@ -48,7 +48,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		SetEvent(m_evMsgs);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 
@@ -68,7 +68,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		WaitForSingleObject(m_evMsgs, m_waitTimeout);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 	}
 }

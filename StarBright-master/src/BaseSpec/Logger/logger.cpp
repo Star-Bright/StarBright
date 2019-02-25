@@ -21,8 +21,8 @@
 
 namespace StarBright
 {
-    Logger *Logger::instance_ = nullptr;
-    //mutex Logger::instanceLock_;
+    Logger *Logger::logInstance = nullptr;
+    mutex Logger::instanceLock;
 
     Logger::Logger(): logfile(nullptr) {
         Initialize();
@@ -31,13 +31,13 @@ namespace StarBright
         fclose(logfile);
     }
     Logger &Logger::instance() {
-        if (instance_ == nullptr) {
-            //lock_guard<mutex> g<instanceLock_>;
-            if (instance_ == nullptr) {
-                instance_ = new Logger();
+        if (logInstance == nullptr) {
+            std::lock_guard<mutex> g(instanceLock);
+            if (logInstance == nullptr) {
+                logInstance = new Logger();
             }
         }
-        return *instance_;
+        return *logInstance;
     }
     void Logger::Initialize() {
         string fileName;
@@ -50,7 +50,7 @@ namespace StarBright
         setvbuf(logfile, nullptr, _IONBF, 0);
     }
     void Logger::PrintfToFile(const char *format, ...) {
-        //lock_guard<mutex> g<instanceLock_>;
+        std::lock_guard<mutex> g(instanceLock);
         static char buf[1024 * 2];
         string tmp = nowMS();
         size_t sz = tmp.size();

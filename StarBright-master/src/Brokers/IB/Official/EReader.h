@@ -3,7 +3,8 @@
 
 #pragma once
 
-#include "StdAfx.h"
+// #include "StdAfx.h"
+#include <deque>
 #include "EDecoder.h"
 #include "EMutex.h"
 #include "EReaderOSSignal.h"
@@ -14,7 +15,7 @@ namespace IBOfficial {
 	class EReaderSignal;
 	class EMessage;
 
-	class TWSAPIDLLEXP EReader
+	class EReader
 	{
 		EClientSocket *m_pClientSocket;
 		EReaderSignal *m_pEReaderSignal;
@@ -46,7 +47,7 @@ namespace IBOfficial {
 #elif defined(IB_WIN32)
 		static DWORD WINAPI readToQueueThread(LPVOID lpParam);
 #else
-#   error "Not implemented on this platform"
+// #   error "Not implemented on this platform"
 #endif
 
 		EMessage * readSingleMsg();

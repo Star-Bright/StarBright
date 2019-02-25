@@ -34,7 +34,7 @@ public:
 	virtual string receiveMessage(int blockingFlap = 1) = 0;
 };
 
-class DLL_EXPORT_IMPORT NanoMessageQueue: public MessageQueue {
+class NanoMessageQueue: public MessageQueue {
 private:
 	int sock_ = -1;
 	int eid_ = 0;

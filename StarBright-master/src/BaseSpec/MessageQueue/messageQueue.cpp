@@ -8,7 +8,7 @@
 #include <config.h>
 #include <Logger/logger.h>
 #include <MessageQueue/messageQueue.h>
-
+#define BUILDING_DLL
 #ifdef _WIN32
 #include <nn.h>
 #include <pair.h>

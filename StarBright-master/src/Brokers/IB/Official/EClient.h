@@ -183,7 +183,7 @@ namespace IBOfficial {
 	typedef std::vector<char> BytesVec;
 
 
-	class TWSAPIDLLEXP EClient
+	class EClient
 	{
 	public:
 
@@ -348,7 +348,7 @@ namespace IBOfficial {
 	protected:
 
 		EWrapper *m_pEWrapper;
-		std::auto_ptr<ETransport> m_transport;
+		std::unique_ptr<ETransport> m_transport;
 
 	private:
 		BytesVec m_inBuffer;

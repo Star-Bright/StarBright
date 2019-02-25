@@ -3,7 +3,7 @@
 
 namespace IBOfficial {
 
-	class TWSAPIDLLEXP ContractCondition : public OperatorCondition {
+	class ContractCondition : public OperatorCondition {
 		int m_conId;
 		std::string m_exchange;
 

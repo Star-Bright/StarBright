@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "ETransport.h"
+#include <vector>
+#include <cstddef>
 
 namespace IBOfficial {
 	class ESocket :

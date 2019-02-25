@@ -6,7 +6,7 @@
 
 namespace IBOfficial {
 
-	class TWSAPIDLLEXP DefaultEWrapper :
+	class DefaultEWrapper :
 		public EWrapper
 	{
 	public:

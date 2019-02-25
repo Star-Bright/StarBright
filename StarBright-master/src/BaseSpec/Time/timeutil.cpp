@@ -119,7 +119,7 @@ namespace StarBright {
 		strftime(buf, 32, DATE_TIME_FORMAT, &_t);
 		return buf;
 #else
-												  //using stringstream only for logging
+		//using stringstream only for logging
 		stringstream strm;
 		strm.imbue(*glocale::instance()._s_loc);
 		strm << dt_with_zone;
@@ -155,7 +155,7 @@ namespace StarBright {
 
 	int toIntDate(time_t time) {
 		struct tm timeinfo;
-		LOCALTIME_S(&timeinfo, &time);
+		// LOCALTIME_S(&timeinfo, &time);
 
 		return ((timeinfo.tm_year + 1900) * 10000) + ((timeinfo.tm_mon + 1) * 100) + timeinfo.tm_mday;
 	}
@@ -168,7 +168,7 @@ namespace StarBright {
 		//timeinfo = std::localtime(&rawtime);
 		//std::strftime(queryTime, 80, "%Y%m%d %H:%M:%S", timeinfo);
 		struct tm timeinfo;
-		LOCALTIME_S(&timeinfo, &time);
+		// LOCALTIME_S(&timeinfo, &time);
 
 		return (timeinfo.tm_hour * 10000) + (timeinfo.tm_min * 100) + (timeinfo.tm_sec);
 	}

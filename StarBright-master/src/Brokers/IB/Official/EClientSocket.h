@@ -14,7 +14,7 @@ namespace IBOfficial {
 	class EWrapper;
 	class EReaderSignal;
 
-	class TWSAPIDLLEXP EClientSocket : public EClient, public EClientMsgSink
+	class EClientSocket : public EClient, public EClientMsgSink
 	{
 	protected:
 		virtual void prepareBufferImpl(std::ostream&) const;
